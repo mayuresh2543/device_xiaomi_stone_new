@@ -74,7 +74,6 @@ debug.cpurend.vsync=false
 debug.hwui.skia_atrace_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=1
 ro.opengles.version=196610
 
 # Media (MM) Modules
