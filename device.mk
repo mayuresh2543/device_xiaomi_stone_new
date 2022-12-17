@@ -280,6 +280,7 @@ PRODUCT_PACKAGES += \
     FrameworkOverlaySunstone \
     NcmTetheringOverlay \
     NfcOverlayStone \
+    OpenDeltaOverlayStone \
     SettingsOverlayStone \
     SettingsProviderOverlayStone \
     SystemUIOverlayStone \
