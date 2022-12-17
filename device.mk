@@ -284,6 +284,7 @@ PRODUCT_PACKAGES += \
     LauncherOverlayStone \
     NcmTetheringOverlay \
     NfcOverlayStone \
+    OpenDeltaOverlayStone \
     SettingsOverlayStone \
     SettingsProviderOverlayStone \
     SystemUIOverlayStone \
