@@ -1,0 +1,2 @@
+# Parts
+allow system_app sysfs_thermal:file write;
