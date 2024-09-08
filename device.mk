@@ -224,17 +224,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libmm-omxcore \
-    libstagefright_softomx.vendor \
-    libstagefrighthw
-
-PRODUCT_PACKAGES += \
     media_codecs_blair.xml \
     media_codecs_blair_lite.xml \
     media_codecs_performance_blair.xml \
