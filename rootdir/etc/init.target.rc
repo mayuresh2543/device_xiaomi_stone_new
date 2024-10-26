@@ -70,6 +70,10 @@ on init
 
     chmod 666 /sys/module/camera/drivers/platform:CAM-FLASH-DRIVER/5c1b000.qcom,cci0:qcom,camera-flash@0/ktd2691_flash
 
+    # Touchscreen
+    chown system system /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_gesture_mode
+    chmod 0664 /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_gesture_mode
+
 on early-fs
     start vold
 
