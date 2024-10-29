@@ -153,7 +153,7 @@ BOARD_VENDOR := xiaomi
 TARGET_BOARD_PLATFORM := holi
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := /sys/devices/platform/soc/4c88000.i2c/i2c-2/2-0038/fts_gesture_mode
+TARGET_TAP_TO_WAKE_NODE := /sys/bus/i2c/devices/2-0038/fts_gesture_mode
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.default
