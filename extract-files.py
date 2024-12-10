@@ -55,6 +55,12 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('0x1F', '0x0'),
     'vendor/etc/libnfc-hal-st.conf': blob_fixup()
         .regex_replace('STNFC_HAL_LOGLEVEL=0x13', 'STNFC_HAL_LOGLEVEL=0x12'),
+    ('vendor/lib64/libalLDC.so', 'vendor/lib64/libalhLDC.so'): blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so': blob_fixup()
         .replace_needed('libhidltransport.so', 'libhidlbase_shim.so'),
     ('vendor/lib64/libwvhidl.so','vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
