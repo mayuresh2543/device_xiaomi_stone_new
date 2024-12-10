@@ -1,7 +1,6 @@
 # All unpinned blobs below are extracted from sunstone:14/OS1.0.13.0.UMQEUXM:user/release-keys
 
 # Current blobs with ELF checks disabled:
-# libalhLDC, libalLDC depend on NDK libnativewindow and build is unable to resolve its symbols
 # libcne, libwqe, lowi-server, mutualex depend on libwpa_client, which is a gnu makefile target
 # libOmxVideoDSMode depends on libOmxCore, which is a gnu makefile target
 
@@ -299,8 +298,8 @@ vendor/lib64/libSnpeHtpV69Stub.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
 vendor/lib64/libalCFR.so
-vendor/lib64/libalLDC.so;DISABLE_CHECKELF
-vendor/lib64/libalhLDC.so;DISABLE_CHECKELF
+vendor/lib64/libalLDC.so
+vendor/lib64/libalhLDC.so
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_calibverify_TriCamera.so
 vendor/lib64/libarcsoft_dualcam_refocus_image.so
