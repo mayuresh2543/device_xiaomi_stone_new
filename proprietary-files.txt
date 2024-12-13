@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from sunstone:14/OS1.0.9.0.UMQMEUM:user/release-keys
+# All unpinned blobs below are extracted from sunstone:14/OS1.0.13.0.UMQEUXM:user/release-keys
 
 # Current blobs with ELF checks disabled:
 # libalhLDC, libalLDC depend on NDK libnativewindow and build is unable to resolve its symbols
@@ -506,8 +506,6 @@ vendor/lib64/vendor.qti.data.slm@1.0.so
 vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
 vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
