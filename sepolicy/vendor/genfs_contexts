@@ -42,3 +42,9 @@ genfscon sysfs /devices/platform/soc/soc:charger-manager/wakeup/wakeup u:object_
 genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify/wakeup u:object_r:sysfs_wakeup:s0
+
+# Display dim layer Exposure
+genfscon sysfs /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure u:object_r:vendor_sysfs_graphics:s0
+
+# Display HBM
+genfscon sysfs /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm_enabled u:object_r:vendor_sysfs_graphics:s0
