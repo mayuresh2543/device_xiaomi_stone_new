@@ -39,15 +39,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.radio.qcriNvOpt</name>
-        <version>1.0</version>
-        <interface>
-            <name>IqcriNvOpt</name>
-            <instance>qcrinvopt0</instance>
-            <instance>qcrinvopt1</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.xiaomi.hardware.mlipay</name>
         <version>1.0-1</version>
         <interface>
