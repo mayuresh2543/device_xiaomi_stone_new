@@ -118,6 +118,13 @@ on early-boot
      verity_update_state
     # M17-T code for HQ-267809 by dongshuai at 2022.12.8 end
 
+    # Enable WLAN cold boot calibration
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/fs_ready 1
+
+    # Dolby
+    mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
+
 # add PcbaConfigSet by wanggang8
 service pcbaconfig /system/vendor/bin/PcbaConfigSet
     class core
