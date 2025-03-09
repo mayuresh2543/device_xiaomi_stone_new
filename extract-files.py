@@ -45,6 +45,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/STFlashTool': blob_fixup()
+         .add_needed('libbase_shim.so'),
     'vendor/etc/camera/camxoverridesettings.txt': blob_fixup()
         .regex_replace('0x10080', '0')
         .regex_replace('0x1F', '0x0'),
