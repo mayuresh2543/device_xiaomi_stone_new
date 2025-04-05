@@ -87,6 +87,20 @@
                 android:resource="@string/clear_speaker_summary" />
         </activity>
 
+	<activity
+    	    android:name=".fastcharge.FastChargeActivity"
+            android:label="@string/fastcharge_title">
+    	    <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+        	android:name="com.android.settings.category"
+        	android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+       		android:name="com.android.settings.summary"
+        	android:resource="@string/fastcharge_summary" />
+	</activity>
+
         <activity
             android:name=".refreshrate.RefreshActivity"
             android:label="@string/refresh_title"

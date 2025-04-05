@@ -376,6 +376,12 @@ on post-fs-data
     chown system system /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
     chmod 0660 /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
 
+    # Allow system to modify fastcharge nodes
+    chown system system /sys/kernel/fastchgtoggle/mode
+    chmod 0660 /sys/kernel/fastchgtoggle/mode
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0660 /sys/kernel/fast_charge/force_fast_charge
+
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
