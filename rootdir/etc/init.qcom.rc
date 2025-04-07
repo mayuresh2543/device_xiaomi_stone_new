@@ -379,6 +379,8 @@ on post-fs-data
     # Allow system to modify fastcharge nodes
     chown system system /sys/kernel/fastchgtoggle/mode
     chmod 0660 /sys/kernel/fastchgtoggle/mode
+    chown system system /sys/kernel/fastchgtoggle/thermals
+    chmod 0660 /sys/kernel/fastchgtoggle/thermals
     chown system system /sys/kernel/fast_charge/force_fast_charge
     chmod 0660 /sys/kernel/fast_charge/force_fast_charge
     
