@@ -95,6 +95,7 @@ persist.vendor.qcom.bluetooth.scram.enabled=false
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
+ro.bluetooth.powerstats.disable=true
 
 # Camera
 camera.disable_zsl_mode=true
