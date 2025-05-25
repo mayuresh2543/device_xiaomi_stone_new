@@ -20,10 +20,15 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.hardware.display.DisplayManager;
+import android.os.IBinder;
 import android.util.Log;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
 import androidx.preference.PreferenceManager;
+import android.view.Display;
+import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
@@ -41,11 +46,19 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
         ThermalUtils.startService(context);
-        RefreshUtils.startService(context);    
-        
+        RefreshUtils.startService(context);
+        overrideHdrTypes(context);
+
         // DC Dimming
         FileUtils.enableService(context);
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
         FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
     }
+
+    private static void overrideHdrTypes(Context context) {
+        // Override HDR
+        final DisplayManager dm = context.getSystemService(DisplayManager.class);
+        dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
+                HdrCapabilities.HDR_TYPE_HDR10, HdrCapabilities.HDR_TYPE_HDR10_PLUS, HdrCapabilities.HDR_TYPE_HLG});
+        }
 }
