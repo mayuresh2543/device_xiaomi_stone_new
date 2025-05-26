@@ -88,14 +88,6 @@ persist.vendor.data.mode=concurrent
 persist.timed.enable=true
 
 #
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-# 196609 is decimal for 0x30001 to report version 3.1
-# 196610 is decimal for 0x30002 to report version 3.2
-ro.opengles.version=196610
-
-#
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
 telephony.lteOnCdmaDevice=1
@@ -182,7 +174,6 @@ config.disable_rtt=true
 
 #Bringup properties
 persist.sys.force_sw_gles=1
-persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
 
