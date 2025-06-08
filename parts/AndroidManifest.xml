@@ -44,6 +44,23 @@
         </receiver>
 
         <activity
+            android:name=".kamisstuff.KamisStuffActivity"
+            android:label="@string/kamis_stuff_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/kamis_stuff_summary" />
+            <meta-data
+        	android:name="com.android.settings.icon"
+        	android:resource="@drawable/ic_kami" />
+        </activity>
+
+        <activity
             android:name=".thermal.ThermalActivity"
             android:label="@string/thermal_title">
             <intent-filter>
@@ -62,22 +79,20 @@
             android:permission="ThermalService">
         </service>
 
-	<activity
-    	    android:name=".zram.ZramActivity"
-            android:label="@string/zram_size_title">
-    	    <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-        	android:name="com.android.settings.category"
-        	android:value="com.android.settings.category.ia.system" />
-            <meta-data
-       		android:name="com.android.settings.summary"
-        	android:resource="@string/zram_summary" />
-            <meta-data
-        	android:name="com.android.settings.icon"
-        	android:resource="@drawable/ic_zram" />
-        </activity>
+        <activity
+            android:name=".zram.ZramActivity"
+            android:label="@string/zram_size_title"
+            android:exported="false" />
+
+        <activity
+            android:name=".fastcharge.FastChargeActivity"
+            android:label="@string/fastcharge_title"
+            android:exported="false" />
+
+        <activity
+            android:name=".corecontrol.CoreControlActivity"
+            android:label="@string/core_control_title"
+            android:exported="false" />
 
         <activity
             android:name=".speaker.ClearSpeakerActivity" 
@@ -91,34 +106,6 @@
             <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/clear_speaker_summary" />
-        </activity>
-
-	<activity
-    	    android:name=".fastcharge.FastChargeActivity"
-            android:label="@string/fastcharge_title">
-    	    <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-        	android:name="com.android.settings.category"
-        	android:value="com.android.settings.category.ia.battery" />
-            <meta-data
-       		android:name="com.android.settings.summary"
-        	android:resource="@string/fastcharge_summary" />
-	</activity>
-
-	<activity
-    	    android:name=".corecontrol.CoreControlActivity"
-    	    android:label="@string/core_control_title">
-    	    <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-    	    </intent-filter>
-    	    <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.battery" />
-    	    <meta-data
-                android:name="com.android.settings.summary"
-                android:resource="@string/core_control_summary" />
         </activity>
 
         <activity
