@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 The LineageOS Project
+ * Copyright (C) 2025 KamiKaonashi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package org.lineageos.settings.fastcharge;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
@@ -45,10 +47,25 @@ public class FastChargeUtils {
     public static final int BYPASS_DISABLED = 0;
     public static final int BYPASS_ENABLED = 1;
 
+    // Charging Control settings
+    private static final String KEY_CHARGING_CONTROL_ENABLED = "charging_control_enabled";
+    private static final String KEY_CHARGING_CONTROL_MODE = "charging_control_mode";
+    private static final String KEY_CHARGING_CONTROL_LIMIT = "charging_control_charging_limit";
+
+    // From Lineage HealthInterface
+    private static final int MODE_AUTO = 1;
+    private static final int MODE_LIMIT = 3;
+
+    private static final int CC_LIMIT_MIN = 10;
+    private static final int CC_LIMIT_MAX = 100;
+    private static final int CC_LIMIT_DEF = 80;
+
     private SharedPreferences mSharedPrefs;
+    private ContentResolver mContentResolver;
 
     public FastChargeUtils(Context context) {
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        mContentResolver = context.getContentResolver();
     }
 
     public int getNormalFastChargeMode() {
@@ -120,7 +137,25 @@ public class FastChargeUtils {
 
     public void enableBypassCharge(boolean enable) {
         try {
-            FileUtils.writeLine(BYPASS_CHARGE_NODE, enable ? "1" : "0");
+            if (enable) {
+                // Backup current Charging Control settings
+                backupChargingControlSettings();
+                
+                // Configure Charging Control for bypass mode
+                setChargingControlEnabled(true);
+                setChargingControlMode(MODE_LIMIT);
+                setChargingControlLimit(CC_LIMIT_MIN); // Set to minimum to enable bypass
+                
+                // Enable bypass charging
+                FileUtils.writeLine(BYPASS_CHARGE_NODE, "1");
+            } else {
+                // Disable bypass charging first
+                FileUtils.writeLine(BYPASS_CHARGE_NODE, "0");
+                
+                // Restore previous Charging Control settings
+                restoreChargingControlSettings();
+            }
+            
             mSharedPrefs.edit().putBoolean(PREF_BYPASS_CHARGE, enable).apply();
         } catch (Exception e) {
             Log.e(TAG, "Failed to write bypass charge status", e);
@@ -143,5 +178,57 @@ public class FastChargeUtils {
 
     public boolean isBypassChargeSupported() {
         return isNodeAccessible(BYPASS_CHARGE_NODE);
+    }
+
+    // Charging Control helper methods
+    private boolean isChargingControlEnabled() {
+        return Settings.System.getInt(mContentResolver,
+                KEY_CHARGING_CONTROL_ENABLED, 0) != 0;
+    }
+
+    private void setChargingControlEnabled(boolean enabled) {
+        Settings.System.putInt(mContentResolver,
+                KEY_CHARGING_CONTROL_ENABLED, enabled ? 1 : 0);
+    }
+
+    private int getChargingControlMode() {
+        return Settings.System.getInt(mContentResolver,
+                KEY_CHARGING_CONTROL_MODE, MODE_AUTO);
+    }
+
+    private void setChargingControlMode(int mode) {
+        Settings.System.putInt(mContentResolver,
+                KEY_CHARGING_CONTROL_MODE, mode);
+    }
+
+    private int getChargingControlLimit() {
+        return Settings.System.getInt(mContentResolver,
+                KEY_CHARGING_CONTROL_LIMIT, CC_LIMIT_DEF);
+    }
+
+    private void setChargingControlLimit(int limit) {
+        if (limit < CC_LIMIT_MIN || limit > CC_LIMIT_MAX) {
+            return;
+        }
+        Settings.System.putInt(mContentResolver,
+                KEY_CHARGING_CONTROL_LIMIT, limit);
+    }
+
+    // Backup and restore methods for Charging Control settings
+    private void backupChargingControlSettings() {
+        mSharedPrefs.edit()
+                .putInt("backup_" + KEY_CHARGING_CONTROL_MODE, getChargingControlMode())
+                .putInt("backup_" + KEY_CHARGING_CONTROL_LIMIT, getChargingControlLimit())
+                .putBoolean("backup_" + KEY_CHARGING_CONTROL_ENABLED, isChargingControlEnabled())
+                .apply();
+    }
+
+    private void restoreChargingControlSettings() {
+        setChargingControlLimit(mSharedPrefs.getInt(
+                "backup_" + KEY_CHARGING_CONTROL_LIMIT, CC_LIMIT_DEF));
+        setChargingControlMode(mSharedPrefs.getInt(
+                "backup_" + KEY_CHARGING_CONTROL_MODE, MODE_AUTO));
+        setChargingControlEnabled(mSharedPrefs.getBoolean(
+                "backup_" + KEY_CHARGING_CONTROL_ENABLED, false));
     }
 }
