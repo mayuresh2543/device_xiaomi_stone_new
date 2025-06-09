@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 The LineageOS Project
+ * Copyright (C) 2025 KamiKaonashi
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,10 +118,12 @@ public class FastChargeSettingsFragment extends PreferenceFragment
                 mFastChargeUtils.setNormalFastChargeMode(mode);
                 updateNormalChargeSummary(Integer.parseInt(mode));
                 return true;
+                
             case KEY_USB_CHARGER:
                 boolean value = (Boolean) newValue;
                 mFastChargeUtils.enableUsbFastCharge(value);
                 return true;
+                
             case KEY_THERMAL_BOOST:
                 boolean thermalValue = (Boolean) newValue;
                 if (thermalValue) {
@@ -141,6 +143,7 @@ public class FastChargeSettingsFragment extends PreferenceFragment
                     mFastChargeUtils.enableThermalBoost(false);
                     return true;
                 }
+                
             case KEY_BYPASS_CHARGE:
                 boolean bypassValue = (Boolean) newValue;
                 if (bypassValue) {
