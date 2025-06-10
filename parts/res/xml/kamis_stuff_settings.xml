@@ -20,4 +20,10 @@
         android:summary="@string/zram_summary"
         android:icon="@drawable/ic_zram" />
 
+    <Preference
+    	android:key="useless"
+    	android:title="@string/useless_mode_title"
+    	android:summary="@string/useless_mode_summary"
+    	android:icon="@drawable/ic_useless" />
+
 </PreferenceScreen>
