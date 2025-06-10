@@ -117,4 +117,18 @@
     <string name="kamis_stuff_title">Kamis Stuff</string>
     <string name="kamis_stuff_summary">Bricking Time!</string>
 
+    <!-- Useless Mode -->
+    <string name="useless_mode_title">Useless Mode</string>
+    <string name="useless_mode_summary">Toggle this for absolutely no reason</string>
+    <string name="useless_mode_enabled_summary">Useless mode is ON - Expect random buzzing and flickering!</string>
+    <string name="useless_mode_disabled_summary">Useless mode is OFF - Your device remains boringly normal</string>
+    <string name="useless_info_category">Information</string>
+    <string name="useless_info_title">About Useless Mode</string>
+    <string name="useless_info_summary">This toggle does absolutely nothing useful. It exists purely for entertainment purposes and may cause random vibrations, screen flickering, and existential confusion. No actual device functionality is affected.</string>
+    <string name="useless_mode_warning_title">⚠️ Useless Mode Warning</string>
+    <string name="useless_mode_status_title">🎉 Useless Mode Status</string>
+    <string name="useless_mode_accept">I Accept the Uselessness</string>
+    <string name="useless_mode_cancel">Cancel</string>
+    <string name="useless_mode_amazing">Amazing!</string>
+
 </resources>

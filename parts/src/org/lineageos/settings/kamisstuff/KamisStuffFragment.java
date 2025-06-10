@@ -24,12 +24,14 @@ import org.lineageos.settings.R;
 import org.lineageos.settings.corecontrol.CoreControlActivity;
 import org.lineageos.settings.fastcharge.FastChargeActivity;
 import org.lineageos.settings.zram.ZramActivity;
+import org.lineageos.settings.useless.UselessActivity;
 
 public class KamisStuffFragment extends PreferenceFragment {
 
     private static final String KEY_CORE_CONTROL = "core_control";
     private static final String KEY_FAST_CHARGE = "fast_charge";
     private static final String KEY_ZRAM = "zram";
+    private static final String KEY_USELESS = "useless";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -64,5 +66,15 @@ public class KamisStuffFragment extends PreferenceFragment {
                 return true;
             });
         }
+        
+        // Useless preference
+	Preference uselessPref = findPreference(KEY_USELESS);
+	if (uselessPref != null) {
+    	    uselessPref.setOnPreferenceClickListener(preference -> {
+        	Intent intent = new Intent(getActivity(), UselessActivity.class);
+		startActivity(intent);
+        	return true;
+    	    });
+	}
     }
 }
