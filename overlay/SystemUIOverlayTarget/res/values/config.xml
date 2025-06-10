@@ -48,9 +48,9 @@
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
-        <item>1</item>
-        <item>255</item>
-        <item>1</item>
+        <item>2</item>
+        <item>24</item>
+        <item>4</item>
     </integer-array>
 
     <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
