@@ -182,6 +182,10 @@ debug.hwui.target_cpu_time_percent=30
 # Incremental FS
 ro.incremental.enable=true
 
+# LMKD
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=100
+
 # Media
 debug.stagefright.c2inputsurface=-1
 vendor.netflix.bsp_rev=Q4350-32962-1
