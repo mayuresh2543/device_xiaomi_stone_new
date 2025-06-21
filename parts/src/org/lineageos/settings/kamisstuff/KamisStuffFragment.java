@@ -26,6 +26,7 @@ import org.lineageos.settings.fastcharge.FastChargeActivity;
 import org.lineageos.settings.zram.ZramActivity;
 import org.lineageos.settings.useless.UselessActivity;
 import org.lineageos.settings.kernelmanager.KernelManagerActivity;
+import org.lineageos.settings.gpumanager.GpuManagerActivity;
 
 public class KamisStuffFragment extends PreferenceFragment {
 
@@ -34,6 +35,7 @@ public class KamisStuffFragment extends PreferenceFragment {
     private static final String KEY_ZRAM = "zram";
     private static final String KEY_USELESS = "useless";
     private static final String KEY_KERNEL_MANAGER = "kernel_manager";
+    private static final String KEY_GPU_MANAGER = "gpu_manager";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -84,6 +86,16 @@ public class KamisStuffFragment extends PreferenceFragment {
         if (kernelManagerPref != null) {
             kernelManagerPref.setOnPreferenceClickListener(preference -> {
                 Intent intent = new Intent(getActivity(), KernelManagerActivity.class);
+                startActivity(intent);
+                return true;
+            });
+        }
+
+        // GPU Manager preference
+        Preference gpuManagerPref = findPreference(KEY_GPU_MANAGER);
+        if (gpuManagerPref != null) {
+            gpuManagerPref.setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(getActivity(), GpuManagerActivity.class);
                 startActivity(intent);
                 return true;
             });
