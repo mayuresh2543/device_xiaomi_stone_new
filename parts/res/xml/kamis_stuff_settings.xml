@@ -26,4 +26,10 @@
     	android:summary="@string/useless_mode_summary"
     	android:icon="@drawable/ic_useless" />
 
+    <Preference
+        android:key="kernel_manager"
+        android:title="@string/kernel_manager_title"
+        android:summary="@string/kernel_manager_summary"
+        android:icon="@drawable/ic_kernel_manager" />
+
 </PreferenceScreen>
