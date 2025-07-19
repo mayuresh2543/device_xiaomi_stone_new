@@ -3,8 +3,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# Viper
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
+
+# BCR
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
