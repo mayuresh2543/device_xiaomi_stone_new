@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common Crdroid stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
