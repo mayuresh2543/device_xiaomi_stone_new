@@ -21,6 +21,8 @@ TARGET_SCREEN_WIDTH := 1080
 
 TARGET_EXCLUDES_AUDIOFX := true
 
+TARGET_DISABLE_MATLOG := true
+
 include vendor/priv-keys/keys/keys.mk
 
 PRODUCT_BRAND := Redmi
