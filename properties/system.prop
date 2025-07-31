@@ -210,3 +210,10 @@ ro.audio.resampler.psd.halflength=960
 ro.audio.resampler.psd.cutoff_percent=98
 ro.audio.resampler.psd.tbwcheat=0
 persist.bluetooth.sbc_hd_higher_bitrate=1
+
+# Infinity
+ro.product.marketname=Redmi Note 12 5G / POCO X5 5G
+ro.infinity.soc=SM6375
+ro.infinity.battery=5000 mAh
+ro.infinity.display=1080 x 2400, 120 Hz
+ro.infinity.camera=48MP + 8MP + 2MP
