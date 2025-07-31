@@ -202,8 +202,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
-
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
@@ -276,7 +274,7 @@ PRODUCT_PACKAGES += \
     Tag
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-infinity
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Overlay RRO
