@@ -5,7 +5,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
-        "1708800"
+        "1651200"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -15,7 +15,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
-        "1708800",
+        "1651200",
         "576000"
       ],
       "ResetOnInit": true
@@ -144,16 +144,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "DoubleTapToWake",
-      "Path": "/proc/tp_gesture",
-      "Values": [
-        "0",
-        "1"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
@@ -189,7 +179,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1708800"
+      "Value": "1651200"
     },
     {
       "PowerHint": "SUSTAINED_PERFORMANCE",
@@ -207,7 +197,7 @@
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1708800"
+      "Value": "1651200"
     },
     {
       "PowerHint": "INTERACTION",
@@ -358,12 +348,6 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "DOUBLE_TAP_TO_WAKE",
-      "Node": "DoubleTapToWake",
-      "Duration": 0,
-      "Value": "1"
     }
   ]
 }
