@@ -13,7 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 import org.lineageos.settings.R;
 import java.util.Random;
 
@@ -23,7 +23,7 @@ public class UselessFragment extends PreferenceFragment
     private static final String KEY_USELESS_MODE = "useless_mode";
     private static final float SOUND_PROBABILITY = 0.15f; // 15% chance
 
-    private SwitchPreference mUselessModePreference;
+    private TwoStatePreference mUselessModePreference;
     private SharedPreferences mSharedPrefs;
     private Random mRandom;
     private Vibrator mVibrator;
@@ -82,7 +82,7 @@ public class UselessFragment extends PreferenceFragment
         mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
         mAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
 
-        mUselessModePreference = (SwitchPreference) findPreference(KEY_USELESS_MODE);
+        mUselessModePreference = (TwoStatePreference) findPreference(KEY_USELESS_MODE);
         if (mUselessModePreference != null) {
             boolean isUselessMode = mSharedPrefs.getBoolean(KEY_USELESS_MODE, false);
             mUselessModePreference.setChecked(isUselessMode);
