@@ -22,7 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 
 import org.lineageos.settings.R;
 
@@ -35,9 +35,9 @@ public class FastChargeSettingsFragment extends PreferenceFragment
     private static final String KEY_BYPASS_CHARGE = "bypass_charge";
 
     private ListPreference mNormalChargerPreference;
-    private SwitchPreference mUsbChargerPreference;
-    private SwitchPreference mThermalBoostPreference;
-    private SwitchPreference mBypassChargePreference;
+    private TwoStatePreference mUsbChargerPreference;
+    private TwoStatePreference mThermalBoostPreference;
+    private TwoStatePreference mBypassChargePreference;
     private FastChargeUtils mFastChargeUtils;
 
     @Override
@@ -47,9 +47,9 @@ public class FastChargeSettingsFragment extends PreferenceFragment
         mFastChargeUtils = new FastChargeUtils(getActivity());
         
         mNormalChargerPreference = (ListPreference) findPreference(KEY_NORMAL_CHARGER);
-        mUsbChargerPreference = (SwitchPreference) findPreference(KEY_USB_CHARGER);
-        mThermalBoostPreference = (SwitchPreference) findPreference(KEY_THERMAL_BOOST);
-        mBypassChargePreference = (SwitchPreference) findPreference(KEY_BYPASS_CHARGE);
+        mUsbChargerPreference = (TwoStatePreference) findPreference(KEY_USB_CHARGER);
+        mThermalBoostPreference = (TwoStatePreference) findPreference(KEY_THERMAL_BOOST);
+        mBypassChargePreference = (TwoStatePreference) findPreference(KEY_BYPASS_CHARGE);
 
         boolean normalChargeSupported = mFastChargeUtils.isNodeAccessible(FastChargeUtils.NORMAL_CHARGE_NODE);
         boolean usbChargeSupported = mFastChargeUtils.isNodeAccessible(FastChargeUtils.USB_CHARGE_NODE);

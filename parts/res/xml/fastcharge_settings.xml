@@ -9,20 +9,20 @@
             android:defaultValue="2"
             android:persistent="true" />
             
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="fastcharge_usb"
             android:title="@string/fastcharge_usb_title"
             android:summary="@string/fastcharge_usb_summary"
             android:persistent="true" />
 
 
-	<SwitchPreference
+	<SwitchPreferenceCompat
     	    android:key="thermal_boost"
     	    android:title="@string/fastcharge_thermal_title"
             android:summary="@string/fastcharge_thermal_summary"
             android:defaultValue="false" />
 
-	<SwitchPreference
+	<SwitchPreferenceCompat
             android:key="bypass_charge"
             android:title="@string/fastcharge_bypass_title"
             android:summary="@string/fastcharge_bypass_summary"

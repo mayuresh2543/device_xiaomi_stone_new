@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/useless_mode_title">
 
-    <SwitchPreference
+    <SwitchPreferenceCompat
         android:key="useless_mode"
         android:title="@string/useless_mode_title"
         android:summary="@string/useless_mode_summary"
