@@ -21,7 +21,7 @@ import android.util.Log;
 import android.widget.Toast;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 
 import org.lineageos.settings.R;
 
@@ -31,7 +31,7 @@ public class CoreControlFragment extends PreferenceFragment implements Preferenc
     private static final String TAG = "CoreControlFragment";
     private static final int NUM_CORES = 8;
 
-    private SwitchPreference[] mCorePrefs = new SwitchPreference[NUM_CORES];
+    private TwoStatePreference[] mCorePrefs = new TwoStatePreference[NUM_CORES];
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -39,7 +39,7 @@ public class CoreControlFragment extends PreferenceFragment implements Preferenc
 
         for (int i = 0; i < NUM_CORES; i++) {
             String key = "core_" + i;
-            mCorePrefs[i] = (SwitchPreference) findPreference(key);
+            mCorePrefs[i] = (TwoStatePreference) findPreference(key);
             if (mCorePrefs[i] != null) {
                 mCorePrefs[i].setOnPreferenceChangeListener(this);
                 mCorePrefs[i].setChecked(isCoreOnline(i));

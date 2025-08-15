@@ -28,7 +28,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
-import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 import android.provider.Settings;
 
 import org.lineageos.settings.R;
@@ -39,7 +39,7 @@ import java.io.File;
 public class DcDimmingSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SwitchPreference mDcDimmingPreference;
+    private TwoStatePreference mDcDimmingPreference;
     private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
     private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure";
     private static final String HBM = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm";
