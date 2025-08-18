@@ -23,6 +23,8 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 TARGET_DISABLE_MATLOG := true
 
+TARGET_ENABLE_BLUR := true
+
 include vendor/priv-keys/keys/keys.mk
 
 PRODUCT_BRAND := Redmi
