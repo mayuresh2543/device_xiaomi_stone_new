@@ -72,6 +72,11 @@ ro.vendor.use_data_netmgrd=true
 debug.sf.enable_hwc_vds=1
 ro.opengles.version=196610
 
+# infinity
+ro.infinity.battery=5000 mAh
+ro.infinity.display=1080 x 2400, 120 Hz
+ro.infinity.camera=48MP + 8MP + 2MP | 13 MP
+
 # Media (MM) Modules
 media.aac_51_output_enabled=true
 media.stagefright.enable-aac=true

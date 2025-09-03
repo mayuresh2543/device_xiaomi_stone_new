@@ -1,0 +1,5 @@
+on property:ro.vendor.qti.soc_model=SM6375
+    setprop ro.infinity.soc "Snapdragon 695"
+
+on property:ro.vendor.qti.soc_model=SM4375
+    setprop ro.infinity.soc "Snapdragon 4 Gen 1"
