@@ -66,9 +66,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/usb_audio_policy_configuration.xml \
 
-# BCR
-$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
@@ -98,9 +95,6 @@ PRODUCT_PACKAGES += \
     libutilscallstack.vendor
 
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
-
-# Datura
-PRODUCT_PACKAGES += Datura
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -197,8 +191,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
-
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
@@ -275,7 +267,7 @@ PRODUCT_PACKAGES += \
     Tag
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-infinity
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -424,7 +416,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.default \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/init.infinity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.infinity.rc
 
 # Sensors
 PRODUCT_PACKAGES += \
