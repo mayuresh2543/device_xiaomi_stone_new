@@ -526,7 +526,31 @@
           }
         }
       ]
+    },
+{
+  "Name": "Dex2oatPerformance",
+  "Actions": [
+    {
+      "Name": "JoinCgroup",
+      "Params": {
+        "Controller": "cpu",
+        "Path": "dex2oat"
+      }
     }
+  ]
+},
+{
+  "Name": "RealTimeInputScheduling",
+  "Actions": [
+    {
+      "Name": "SetSchedulerPolicy",
+      "Params": {
+        "Policy": "SCHED_FIFO",
+        "Priority": "2"
+      }
+    }
+  ]
+}
   ],
 
   "AggregateProfiles": [
@@ -573,6 +597,18 @@
     {
       "Name": "CPUSET_SP_RESTRICTED",
       "Profiles": [ "ServiceCapacityRestricted", "TimerSlackNormal" ]
+    },
+    {
+      "Name": "Dex2OatBootComplete",
+      "Profiles": [ "Dex2oatPerformance", "LowIoPriority", "TimerSlackHigh" ]
+    },
+    {
+      "Name": "Dex2OatBackground",
+      "Profiles": [ "Dex2OatBootComplete" ]
+    },
+    {
+      "Name": "InputPolicy",
+      "Profiles": [ "RealTimeInputScheduling", "MaxPerformance", "ProcessCapacityMax", "TimerSlackNormal" ]
     }
   ]
 }
