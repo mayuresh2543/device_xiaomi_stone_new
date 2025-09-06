@@ -121,17 +121,12 @@ on early-boot
     # Enable WLAN cold boot calibration
     write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/fs_ready 1
 
-    # Dolby
-    mkdir /data/vendor/dolby 0770 media media
-    mkdir /data/vendor/multimedia 0775 system system
-
 # add PcbaConfigSet by wanggang8
 service pcbaconfig /system/vendor/bin/PcbaConfigSet
     class core
     user root
     group root system vendor_qti_diag
     oneshot
-
 
 on boot
     chown system system /sys/class/drm/card0-DSI-1/doze_brightness
