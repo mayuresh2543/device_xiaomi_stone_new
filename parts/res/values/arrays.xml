@@ -139,4 +139,13 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+
+<!-- resolution -->
+    <string-array name="system_resolution_entries">
+        <item>@string/resolution_default</item>
+        <item>@string/resolution_480p</item>
+        <item>@string/resolution_540p</item>
+        <item>@string/resolution_720p</item>
+    </string-array>
+
 </resources>
