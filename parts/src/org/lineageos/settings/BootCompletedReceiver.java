@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import org.lineageos.settings.thermal.ThermalUtils;
+import org.lineageos.settings.resolution.ResolutionUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.dirac.DiracUtils;
 
@@ -47,5 +48,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Per-App-RR
         RefreshUtils.startService(context);
+
+        // Per-App-Resolution
+        ResolutionUtils.startService(context);
     }
 }

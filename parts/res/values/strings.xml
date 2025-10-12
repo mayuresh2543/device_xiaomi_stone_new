@@ -165,4 +165,18 @@
     <string name="music_headset_scenario_video">Video</string>
     <string name="music_headset_scenario_vocal">Voice</string>
 
+    <!-- Per-app resolution -->
+    <string name="resolution_title">Per-app resolution</string>
+    <string name="resolution_summary">Set custom resolution for specific applications</string>
+    <string name="resolution_default">Default</string>
+    <string name="resolution_480p">480p</string>
+    <string name="resolution_540p">540p</string>
+    <string name="resolution_720p">720p</string>
+
+    <!-- System-wide resolution -->
+    <string name="system_resolution_title">System resolution</string>
+    <string name="system_resolution_summary">Baseline applied system-wide: %1$s</string>
+    <string name="system_resolution_summary_setting">Baseline applied system-wide</string>
+    <string name="system_resolution_note">Per-app rules override the baseline while those apps are in the foreground</string>
+
 </resources>
