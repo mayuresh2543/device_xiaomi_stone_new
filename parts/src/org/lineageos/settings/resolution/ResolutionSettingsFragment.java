@@ -94,7 +94,7 @@ public class ResolutionSettingsFragment extends PreferenceFragment implements Ap
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle(getResources().getString(R.string.resolution_title));
+        getActivity().setTitle(getResources().getString(R.string.upscale_title));
         rebuild();
     }
 
@@ -212,7 +212,7 @@ public class ResolutionSettingsFragment extends PreferenceFragment implements Ap
 
     private class ModeAdapter extends BaseAdapter {
         private final LayoutInflater inflater;
-        private final int[] items = {R.string.resolution_default, R.string.resolution_480p, R.string.resolution_540p, R.string.resolution_720p};
+        private final int[] items = {R.string.upscale_default, R.string.upscale_480p, R.string.upscale_540p, R.string.upscale_720p};
 
         private ModeAdapter(Context context) {
             inflater = LayoutInflater.from(context);
