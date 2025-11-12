@@ -103,6 +103,12 @@ function configure_memory_parameters() {
     echo 1 > /proc/sys/vm/kswapd_threads
 }
 
+# configure governor settings for silver cluster
+echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+
+# configure governor settings for gold cluster
+echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
+
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 
 configure_memory_parameters
