@@ -284,7 +284,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Overlay RRO
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayStone \
-    DialerOverlayStone \
     TelephonyOverlayStone \
     FrameworkOverlayStone \
     NfcOverlayStone \
