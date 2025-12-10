@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# GameBar Performance Overlay
+$(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
+
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
