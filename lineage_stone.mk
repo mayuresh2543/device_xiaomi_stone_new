@@ -21,7 +21,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 TARGET_EXCLUDES_AUDIOFX := true
 
-include vendor/priv-keys/keys/keys.mk
+include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone
