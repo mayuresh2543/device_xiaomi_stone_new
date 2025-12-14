@@ -4,3 +4,6 @@ allow hal_sensors_default hal_audio_default:unix_stream_socket connectto;
 
 hal_client_domain(hal_sensors_default, hal_audio)
 allow hal_sensors_default hal_audio_hwservice:hwservice_manager find;
+
+# Allow access for dynamic sensor properties
+get_prop(hal_sensors_default, vendor_dynamic_sensor_prop)
