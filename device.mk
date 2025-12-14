@@ -433,6 +433,10 @@ PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal \
     libsensorndkbridge
 
+# Sensors Conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
