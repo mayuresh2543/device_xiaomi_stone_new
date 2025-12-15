@@ -10,9 +10,6 @@ $(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
-# Datura
-PRODUCT_PACKAGES += Datura
-
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
