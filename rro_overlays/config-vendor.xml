@@ -7,4 +7,5 @@
     <overlay package="com.android.settings.overlay.stone" mutable="false" enabled="true" />
     <overlay package="com.android.systemui.overlay.stone" mutable="false" enabled="true" />
     <overlay package="com.android.wifi.resources.overlay.stone" mutable="false" enabled="true" />
+    <overlay package="com.android.nfc.overlay.stone" mutable="false" enabled="true" />
 </config>

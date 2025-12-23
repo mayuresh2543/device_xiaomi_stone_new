@@ -287,6 +287,7 @@ PRODUCT_PACKAGES += \
     DialerOverlayStone \
     TelephonyOverlayStone \
     FrameworkOverlayStone \
+    NfcOverlayStone \
     SettingsOverlayStone \
     SettingsProviderOverlayStone \
     SystemUIOverlayStone \
@@ -409,7 +410,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_fstab.qti \
     fstab.default
-  
+
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.kernel.post_boot.sh \
