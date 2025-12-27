@@ -4,3 +4,5 @@ allow hal_power_default vendor_sysfs_double_tap:dir search;
 allow hal_power_default vendor_sysfs_double_tap:file rw_file_perms;
 
 allow hal_power_default sysfs:file { open read write };
+
+allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
