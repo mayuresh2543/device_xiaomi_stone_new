@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- URL base to find the full zip files, %s is replaced to be property_device value. -->
+    <string name="url_base_full" formatted="false">https://github.com/mayuresh-releases/YAAP_stone/releases/latest/download/</string>
+
+    <!-- the branch name to format URLs with -->
+    <string name="url_branch_name">full-signed</string>
+
+    <!-- URL base to fetch all builds. first %s is replaced by branch name later on by property_device -->
+    <string name="url_base_json" formatted="false">https://raw.githubusercontent.com/mayuresh2543/yaap_ota-info/%s/%s/%s.json</string>
+
+    <!-- github API url, pointing to the OTA json repo. %s formatted as described above -->
+    <string name="url_api_history" formatted="false">https://api.github.com/repos/mayuresh2543/yaap_ota-info/commits?sha=%s&amp;path=%s/%s.json</string>
+
+    <!-- URL base to fetch cert jsons. first %s is replaced by branch name second by property_device -->
+    <string name="url_cert_json" formatted="false">https://raw.githubusercontent.com/mayuresh2543/yaap_ota-info/%s/%s/cert.json</string>
+
     <!-- Whether device supports A/B performance flashing -->
 	<item name="support_ab_perf_mode" type="bool">true</item>
 </resources>
