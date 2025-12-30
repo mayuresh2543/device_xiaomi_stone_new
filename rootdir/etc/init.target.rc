@@ -295,6 +295,23 @@ on property:ro.vendor.display.svi=1 && property:sys.boot_completed=1
 on property:ro.boot.hwname=*
     setprop ro.boot.product.hardware.sku ${ro.boot.hwname}
 
+
+# Set Attestation props for each stone
+
+on property:ro.boot.hwname=sunstone && property:ro.boot.hwc=Global
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation Redmi
+    setprop ro.product.device_for_attestation sunstone
+    setprop ro.product.name_for_attestation "Redmi Note 12 5G"
+    setprop ro.product.model_for_attestation "Redmi Note 12 5G"
+
+on property:ro.boot.hwname=moonstone && property:ro.boot.hwc!=Global
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation POCO
+    setprop ro.product.device_for_attestation moonstone
+    setprop ro.product.name_for_attestation "POCO X5 5G"
+    setprop ro.product.model_for_attestation "POCO x5 5G"
+
 # Restrict access on this node
 on property:sys.boot_completed=1
     # Only owner can acces this node
