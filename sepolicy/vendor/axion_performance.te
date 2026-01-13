@@ -1,0 +1,7 @@
+# Allow system components to tune GPU
+allow system_server sysfs_gpu:file rw_file_perms;
+allow system_app    sysfs_gpu:file rw_file_perms;
+
+# Allow VM tuning
+allow system_server proc_dirty:file rw_file_perms;
+allow system_server proc_sched:file rw_file_perms;

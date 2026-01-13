@@ -53,3 +53,13 @@ genfscon sysfs /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-D
 genfscon sysfs /sys/kernel/fast_charge/force_fast_charge u:object_r:vendor_sysfs_fastcharge:s0
 genfscon sysfs /sys/kernel/fastchgtoggle/mode u:object_r:vendor_sysfs_fastcharge:s0
 genfscon sysfs /sys/kernel/fastchgtoggle/thermals u:object_r:vendor_sysfs_fastcharge:s0
+
+# VM tuning nodes
+genfscon proc /sys/vm/dirty_writeback_centisecs     u:object_r:proc_dirty:s0
+genfscon proc /sys/vm/vfs_cache_pressure            u:object_r:proc_drop_caches:s0
+genfscon proc /sys/vm/dirty_ratio                   u:object_r:proc_dirty:s0
+genfscon proc /sys/kernel/sched_migration_cost_ns   u:object_r:proc_sched:s0
+
+# GPU (Adreno / kgsl)
+genfscon sysfs /class/kgsl/kgsl-3d0/min_pwrlevel                u:object_r:sysfs_gpu:s0
+genfscon sysfs /class/kgsl/kgsl-3d0/gpu_available_frequencies  u:object_r:sysfs_gpu:s0
