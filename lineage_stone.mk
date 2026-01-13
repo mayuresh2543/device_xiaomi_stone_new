@@ -12,6 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+TARGET_DISABLE_EPPE := true
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -21,7 +22,18 @@ TARGET_SCREEN_WIDTH := 1080
 
 TARGET_EXCLUDES_AUDIOFX := true
 
-include vendor/lineage-priv/keys/keys.mk
+#Optional flags
+# Camera information
+AXION_CAMERA_REAR_INFO := 50,8,1.9
+AXION_CAMERA_FRONT_INFO := 13.2
+
+# Maintainer name
+AXION_MAINTAINER := AayamPokhrel
+
+# Processor name
+AXION_PROCESSOR :=SM4375
+
+#include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone
