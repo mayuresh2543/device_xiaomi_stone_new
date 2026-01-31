@@ -11,30 +11,56 @@
       "File": "foreground/cpus"
     },
     {
+      "Name": "HighCapacityWICPUs",
+      "Controller": "cpuset",
+      "File": "foreground_window/cpus"
+    },
+    {
       "Name": "MaxCapacityCPUs",
       "Controller": "cpuset",
       "File": "top-app/cpus"
     },
     {
-      "Name": "AudioAppCapacityCPUs",
-      "Controller": "cpuset",
-      "File": "audio-app/cpus"
+      "Name": "MemStats",
+      "Controller": "memory",
+      "File": "memory.stat"
     },
-
     {
       "Name": "MemLimit",
       "Controller": "memory",
-      "File": "memory.limit_in_bytes"
+      "File": "memory.limit_in_bytes",
+      "FileV2": "memory.max"
     },
     {
       "Name": "MemSoftLimit",
       "Controller": "memory",
-      "File": "memory.soft_limit_in_bytes"
+      "File": "memory.soft_limit_in_bytes",
+      "FileV2": "memory.low"
     },
     {
       "Name": "MemSwappiness",
       "Controller": "memory",
       "File": "memory.swappiness"
+    },
+    {
+      "Name": "MemUsage",
+      "Controller": "memory",
+      "File": "memory.usage_in_bytes"
+    },
+    {
+      "Name": "MemAndSwapUsage",
+      "Controller": "memory",
+      "File": "memory.memsw.usage_in_bytes"
+    },
+    {
+      "Name": "MemPressureLevel",
+      "Controller": "memory",
+      "File": "memory.pressure_level"
+    },
+    {
+      "Name": "MemCgroupEventControl",
+      "Controller": "memory",
+      "File": "cgroup.event_control"
     },
     {
       "Name": "UClampMin",
@@ -45,6 +71,21 @@
       "Name": "UClampMax",
       "Controller": "cpu",
       "File": "cpu.uclamp.max"
+    },
+    {
+      "Name": "UClampLatencySensitive",
+      "Controller": "cpu",
+      "File": "cpu.uclamp.latency_sensitive"
+    },
+    {
+      "Name": "FreezerState",
+      "Controller": "freezer",
+      "File": "cgroup.freeze"
+    },
+    {
+      "Name": "CgroupProcs",
+      "Controller": "cgroup2",
+      "File": "cgroup.procs"
     }
   ],
 
@@ -63,6 +104,32 @@
       ]
     },
     {
+      "Name": "Frozen",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "FreezerState",
+            "Value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Unfrozen",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "FreezerState",
+            "Value": "0"
+          }
+        }
+      ]
+    },
+    {
       "Name": "NormalPerformance",
       "Actions": [
         {
@@ -70,7 +137,20 @@
           "Params":
           {
             "Controller": "cpu",
-            "Path": ""
+            "Path": "system"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "ServicePerformance",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "system-background"
           }
         }
       ]
@@ -84,6 +164,19 @@
           {
             "Controller": "cpu",
             "Path": "foreground"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "HighPerformanceWI",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "foreground_window"
           }
         }
       ]
@@ -115,24 +208,24 @@
       ]
     },
     {
-      "Name": "AudioAppPerformance",
-      "Actions" : [
+      "Name": "RealTimeInputScheduling",
+      "Actions": [
         {
-          "Name" : "JoinCgroup",
-          "Params" :
+          "Name": "SetSchedulerPolicy",
+          "Params":
           {
-            "Controller": "cpu",
-            "Path": "audio-app"
+            "Policy": "SCHED_FIFO",
+            "Priority": "2"
           }
         }
       ]
     },
     {
       "Name": "CameraServicePerformance",
-      "Actions" : [
+      "Actions": [
         {
-          "Name" : "JoinCgroup",
-          "Params" :
+          "Name": "JoinCgroup",
+          "Params":
           {
             "Controller": "cpu",
             "Path": "camera-daemon"
@@ -140,6 +233,59 @@
         }
       ]
     },
+    {
+      "Name": "NNApiHALPerformance",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "nnapi-hal"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Dex2oatPerformance",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpu",
+            "Path": "dex2oat"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "CpuPolicySpread",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "UClampLatencySensitive",
+            "Value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "CpuPolicyPack",
+      "Actions": [
+        {
+          "Name": "SetAttribute",
+          "Params":
+          {
+            "Name": "UClampLatencySensitive",
+            "Value": "0"
+          }
+        }
+      ]
+    },
+
     {
       "Name": "VrKernelCapacity",
       "Actions": [
@@ -272,6 +418,19 @@
       ]
     },
     {
+      "Name": "ProcessCapacityHighWI",
+      "Actions": [
+        {
+          "Name": "JoinCgroup",
+          "Params":
+          {
+            "Controller": "cpuset",
+            "Path": "foreground_window"
+          }
+        }
+      ]
+    },
+    {
       "Name": "ProcessCapacityMax",
       "Actions": [
         {
@@ -325,47 +484,6 @@
         }
       ]
     },
-    {
-      "Name": "AudioAppCapacity",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "cpuset",
-            "Path": "audio-app"
-          }
-        }
-      ]
-    },
-
-    {
-      "Name": "BlkIOForeground",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "blkio",
-            "Path": ""
-          }
-        }
-      ]
-    },
-    {
-      "Name": "BlkIOBackground",
-      "Actions" : [
-        {
-          "Name" : "JoinCgroup",
-          "Params" :
-          {
-            "Controller": "blkio",
-            "Path": "bg"
-          }
-        }
-      ]
-    },
-
     {
       "Name": "LowIoPriority",
       "Actions": [
@@ -445,27 +563,27 @@
     },
 
     {
-      "Name": "PerfBoost",
+      "Name": "SFMainPolicy",
       "Actions": [
         {
-          "Name": "SetClamps",
+          "Name": "JoinCgroup",
           "Params":
           {
-            "Boost": "50%",
-            "Clamp": "0"
+            "Controller": "cpuset",
+            "Path": "system-background"
           }
         }
       ]
     },
     {
-      "Name": "PerfClamp",
+      "Name": "SFRenderEnginePolicy",
       "Actions": [
         {
-          "Name": "SetClamps",
+          "Name": "JoinCgroup",
           "Params":
           {
-            "Boost": "0",
-            "Clamp": "30%"
+            "Controller": "cpuset",
+            "Path": "system-background"
           }
         }
       ]
@@ -479,7 +597,7 @@
           "Params":
           {
             "Name": "MemSoftLimit",
-            "Value": "16MB"
+            "Value": "16M"
           }
         },
         {
@@ -501,7 +619,7 @@
           "Params":
           {
             "Name": "MemSoftLimit",
-            "Value": "512MB"
+            "Value": "512M"
           }
         },
         {
@@ -526,31 +644,7 @@
           }
         }
       ]
-    },
-{
-  "Name": "Dex2oatPerformance",
-  "Actions": [
-    {
-      "Name": "JoinCgroup",
-      "Params": {
-        "Controller": "cpu",
-        "Path": "dex2oat"
-      }
     }
-  ]
-},
-{
-  "Name": "RealTimeInputScheduling",
-  "Actions": [
-    {
-      "Name": "SetSchedulerPolicy",
-      "Params": {
-        "Policy": "SCHED_FIFO",
-        "Priority": "2"
-      }
-    }
-  ]
-}
   ],
 
   "AggregateProfiles": [
@@ -567,8 +661,20 @@
       "Profiles": [ "HighPerformance", "HighIoPriority", "TimerSlackNormal" ]
     },
     {
+      "Name": "SCHED_SP_FOREGROUND_WINDOW",
+      "Profiles": [ "HighPerformanceWI", "HighIoPriority", "TimerSlackNormal" ]
+    },
+    {
       "Name": "SCHED_SP_TOP_APP",
       "Profiles": [ "MaxPerformance", "MaxIoPriority", "TimerSlackNormal" ]
+    },
+    {
+      "Name": "SCHED_SP_SYSTEM",
+      "Profiles": [ "ServicePerformance", "LowIoPriority", "TimerSlackNormal" ]
+    },
+    {
+      "Name": "SCHED_SP_COMPUTE",
+      "Profiles": [ "HighPerformance", "ProcessCapacityHigh", "LowIoPriority", "TimerSlackNormal" ]
     },
     {
       "Name": "SCHED_SP_RT_APP",
@@ -585,6 +691,10 @@
     {
       "Name": "CPUSET_SP_FOREGROUND",
       "Profiles": [ "HighPerformance", "ProcessCapacityHigh", "HighIoPriority", "TimerSlackNormal" ]
+    },
+    {
+      "Name": "CPUSET_SP_FOREGROUND_WINDOW",
+      "Profiles": [ "HighPerformanceWI", "ProcessCapacityHighWI", "HighIoPriority", "TimerSlackNormal" ]
     },
     {
       "Name": "CPUSET_SP_TOP_APP",
@@ -605,6 +715,10 @@
     {
       "Name": "Dex2OatBackground",
       "Profiles": [ "Dex2OatBootComplete" ]
+    },
+    {
+      "Name": "OtaProfiles",
+      "Profiles": [ "ServiceCapacityLow", "LowIoPriority", "HighEnergySaving" ]
     },
     {
       "Name": "InputPolicy",
