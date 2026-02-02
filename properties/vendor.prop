@@ -195,6 +195,7 @@ ro.opengles.version=196610
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.secure_preview_buffer_format=420_sp
 vendor.gralloc.secure_preview_only=1
+ro.surface_flinger.supports_background_blur=1
 
 # HWUI
 debug.hwui.use_hint_manager=true
