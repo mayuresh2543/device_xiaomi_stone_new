@@ -24,16 +24,16 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 #Optional flags
 # Camera information
-AXION_CAMERA_REAR_INFO := 50,8,1.9
+AXION_CAMERA_REAR_INFO := 48,8,1.9
 AXION_CAMERA_FRONT_INFO := 13.2
 
 # Maintainer name
 AXION_MAINTAINER := AayamPokhrel
 
 # Processor name
-AXION_PROCESSOR :=SM4375
+AXION_PROCESSOR := Snapdragon_Pro_Series
 
-#include vendor/lineage-priv/keys/keys.mk
+include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone
