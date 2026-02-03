@@ -30,9 +30,6 @@ AXION_CAMERA_FRONT_INFO := 13.2
 # Maintainer name
 AXION_MAINTAINER := AayamPokhrel
 
-# Processor name
-AXION_PROCESSOR := Snapdragon_Pro_Series
-
 include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_BRAND := Redmi

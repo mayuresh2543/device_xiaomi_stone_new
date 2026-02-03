@@ -1,0 +1,9 @@
+#This uses existing soc_ids from early init to set correct processor string.
+#It is copied to vendor through device.mk using TARGET_COPY_OUT_VENDOR
+
+on property:ro.vendor.qti.soc_model=SM6375
+    setprop persist.sys.axion_processor_info SM6375
+
+on property:ro.vendor.qti.soc_model=SM4375
+    setprop persist.sys.axion_processor_info SM4375
+
