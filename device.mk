@@ -99,6 +99,10 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,camera,override_format_from_reserved,true)
 
+# Circle to Search support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/c2s/contextual_search.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/contextual_search.xml
+
 # Datura
 PRODUCT_PACKAGES += Datura
 
