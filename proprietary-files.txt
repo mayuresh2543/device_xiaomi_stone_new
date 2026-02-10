@@ -1,14 +1,6 @@
 # All unpinned blobs below are extracted from sunstone:14/OS2.0.5.0.UMQMIXM:user/release-keys
 
 # ACDB
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_Bluetooth_cal.acdb
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_General_cal.acdb
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_Global_cal.acdb
@@ -17,6 +9,14 @@ vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_Hdmi_cal.acdb
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_Headset_cal.acdb
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/holi-qrdsku1-snd-card/QRD_SKU1_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 vendor/etc/acdbdata/nn_ns_models/fai__2.0.0_0.1__3.0.0_0.0__eai_1.00.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__2.2.0_0.1__3.0.0_0.0__eai_1.00.pmd
 vendor/etc/acdbdata/nn_vad_models/fai_3.0.0_0.0_eai_1.00.pmd
@@ -118,8 +118,8 @@ vendor/etc/audio/sku_holi/sound_trigger_platform_info.xml
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libmisoundfx.so
+vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libmisoundfx.so
 
 # Bluetooth
@@ -286,12 +286,12 @@ vendor/lib64/com.qualcomm.mcx.linearmapper.so
 vendor/lib64/com.qualcomm.mcx.policy.mfl.so
 vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so
 vendor/lib64/libHalSuperSensorServer.so
-vendor/lib64/libSuperSensor.so
-vendor/lib64/libSuperSensorCPU.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libSnpeHtpPrepare.so
 vendor/lib64/libSnpeHtpV68Stub.so
 vendor/lib64/libSnpeHtpV69Stub.so
+vendor/lib64/libSuperSensor.so
+vendor/lib64/libSuperSensorCPU.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
 vendor/lib64/libalCFR.so
@@ -899,26 +899,26 @@ system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
-system_ext/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.callcapability@1.0.so
+system_ext/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.configaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.configservice@1.0.so
 system_ext/lib64/vendor.qti.ims.configservice@1.1.so
-system_ext/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.connection@1.0.so
-system_ext/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.factory@2.0.so
 system_ext/lib64/vendor.qti.ims.factory@2.1.so
 system_ext/lib64/vendor.qti.ims.factory@2.2.so
-system_ext/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.rcssip@1.0.so
 system_ext/lib64/vendor.qti.ims.rcssip@1.1.so
 system_ext/lib64/vendor.qti.ims.rcssip@1.2.so
-system_ext/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.rcsuce@1.0.so
 system_ext/lib64/vendor.qti.ims.rcsuce@1.1.so
 system_ext/lib64/vendor.qti.ims.rcsuce@1.2.so
-system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/priv-app/ims/ims.apk
@@ -1231,7 +1231,6 @@ vendor/lib64/libsensorcal.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Sensors Configs
-vendor/etc/sensor_log.cfg
 vendor/etc/sensors/config/moonstone_qrd_ak991x_0.json
 vendor/etc/sensors/config/moonstone_qrd_ak991x_1.json
 vendor/etc/sensors/config/moonstone_qrd_bmi3x0.json
@@ -1287,6 +1286,7 @@ vendor/etc/sensors/config/strait_qrd_tmd2725.json
 vendor/etc/sensors/config/strait_tmd2725.json
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
+vendor/etc/sensor_log.cfg
 
 # Snapdragon Computer Vision Engine
 vendor/lib64/libcvp_common.so
