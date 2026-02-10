@@ -97,7 +97,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libutilscallstack.vendor
 
-$(call soong_config_set_bool,camera,override_format_from_reserved,true)
+$(call soong_config_set,camera,override_format_from_reserved,true)
 
 # Datura
 PRODUCT_PACKAGES += Datura
@@ -134,7 +134,7 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8350/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
     $(LOCAL_PATH)/configs/display_id_4630947218746568833.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947218746568833.xml
 
-$(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
+$(call soong_config_set,stagefright,target_disable_thumbnail_block_model,true)
 
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
@@ -200,7 +200,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
 
 # HIDL
 PRODUCT_PACKAGES += \
