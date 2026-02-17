@@ -56,6 +56,9 @@ TARGET_USES_USLMK := false
 #RAM
 TARGET_IS_LOW_RAM := false
 
+# debugging
+#PRODUCT_PRODUCT_PROPERTIES += persist.sys.ax_debug_enabled=1
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
