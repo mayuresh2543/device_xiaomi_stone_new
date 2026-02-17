@@ -24,8 +24,8 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 #Optional flags
 # Camera information
-AXION_CAMERA_REAR_INFO := 48,8,1.9
-AXION_CAMERA_FRONT_INFO := 13.2
+AXION_CAMERA_REAR_INFO := 48,8,2
+AXION_CAMERA_FRONT_INFO := 13
 
 # Maintainer name
 AXION_MAINTAINER := AayamPokhrel
