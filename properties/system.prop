@@ -157,8 +157,8 @@ sys.qca1530=detect
 persist.debug.coresight.config=stm-events
 
 #hwui properties
-debug.hwui.skia_atrace_enabled=false
-debug.hwui.skia_use_perfetto_track_events=false
+debug.hwui.skia_atrace_enabled=true
+debug.hwui.skia_use_perfetto_track_events=true 
 config.disable_rtt=true
 
 #Bringup properties
