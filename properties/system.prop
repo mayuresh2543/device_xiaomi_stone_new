@@ -201,5 +201,5 @@ persist.bluetooth.sbc_hd_higher_bitrate=1
 
 # Scroll Optimizer
 persist.sys.perf.scroll_opt=true
-persist.sys.perf.scroll_opt.heavy_app=2
+persist.sys.perf.scroll_opt.heavy_app=1
 
