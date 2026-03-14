@@ -18,7 +18,7 @@ void vendor_load_properties() {
             "moonstone",
             "POCO X5 5G",
             "_blair",
-            "POCO/moonstone_p_global/moonstone:14/UKQ1.231003.002/V816.0.24.0.UMPMIXM:user/release-keys"
+            "POCO/moonstone_p_global/moonstone:14/UKQ1.231003.002/V816.0.26.0.UMPMIXM:user/release-keys"
         },
         { //MOONSTONE_IN
             "moonstone_p_in",
@@ -26,7 +26,7 @@ void vendor_load_properties() {
             "moonstone",
             "POCO X5 5G",
             "_blair",
-            "POCO/moonstone_p_in/moonstone:14/UKQ1.231003.002/V816.0.20.0.UMPINXM:user/release-keys"
+            "POCO/moonstone_p_in/moonstone:14/UKQ1.231003.002/V816.0.22.0.UMPINXM:user/release-keys"
         },
         { //SUNSTONE_CN
             "sunstone_cn",
