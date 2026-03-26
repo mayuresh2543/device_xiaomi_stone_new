@@ -33,10 +33,6 @@
 # Core Control
 /sys/devices/system/cpu/cpu[0-7]/online					       u:object_r:vendor_sysfs_corecontrol:s0
 
-# DC Dimming & HBM
-/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure       u:object_r:vendor_sysfs_graphics:s0
-/sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm      u:object_r:vendor_sysfs_graphics:s0
-
 # Fastcharge
 /sys/kernel/fast_charge/force_fast_charge                  		       u:object_r:vendor_sysfs_fastcharge:s0
 /sys/kernel/fastchgtoggle/mode	         		      		       u:object_r:vendor_sysfs_fastcharge:s0

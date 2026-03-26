@@ -20,30 +20,18 @@ package org.lineageos.settings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.hardware.display.DisplayManager;
-import android.os.IBinder;
 import android.util.Log;
-import android.content.SharedPreferences;
-import android.os.SystemProperties;
-import androidx.preference.PreferenceManager;
-import android.view.Display;
-import android.view.Display.HdrCapabilities;
 
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.refreshrate.RefreshUtils;
-import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.dirac.DiracUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "XiaomiParts";
-    private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
-    private static final String DC_DIMMING_NODE = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-    SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
 
@@ -53,21 +41,11 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         } catch (Exception e) {
             Log.d(TAG, "Dirac is not present in system");
         }
+
         // Thermal Profiles
         ThermalUtils.startService(context);
+
+        // Per-App-RR
         RefreshUtils.startService(context);
-        overrideHdrTypes(context);
-
-        // DC Dimming
-        FileUtils.enableService(context);
-        boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
-        FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
     }
-
-    private static void overrideHdrTypes(Context context) {
-        // Override HDR
-        final DisplayManager dm = context.getSystemService(DisplayManager.class);
-        dm.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
-                HdrCapabilities.HDR_TYPE_HDR10, HdrCapabilities.HDR_TYPE_HDR10_PLUS, HdrCapabilities.HDR_TYPE_HLG});
-        }
 }

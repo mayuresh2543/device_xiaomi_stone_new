@@ -43,12 +43,6 @@ genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup/wakeup u:object_r:sysfs_
 genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify/wakeup u:object_r:sysfs_wakeup:s0
 
-# Display dim layer Exposure
-genfscon sysfs /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_exposure u:object_r:vendor_sysfs_graphics:s0
-
-# Display HBM
-genfscon sysfs /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm u:object_r:vendor_sysfs_graphics:s0
-
 # Fastcharge
 genfscon sysfs /sys/kernel/fast_charge/force_fast_charge u:object_r:vendor_sysfs_fastcharge:s0
 genfscon sysfs /sys/kernel/fastchgtoggle/mode u:object_r:vendor_sysfs_fastcharge:s0
