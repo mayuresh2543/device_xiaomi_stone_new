@@ -3,12 +3,6 @@
     android:title="@string/kamis_stuff_title">
 
     <Preference
-        android:key="core_control"
-        android:title="@string/core_control_title"
-        android:summary="@string/core_control_summary"
-        android:icon="@drawable/ic_cpu" />
-
-    <Preference
         android:key="fast_charge"
         android:title="@string/fastcharge_title"
         android:summary="@string/fastcharge_summary"

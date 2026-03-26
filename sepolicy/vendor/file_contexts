@@ -30,9 +30,6 @@
 /vendor/lib64/libwa_widelens_undistort\.so                                     u:object_r:same_process_hal_file:s0
 /vendor/lib64/libxml2_vendor\.so                                               u:object_r:same_process_hal_file:s0
 
-# Core Control
-/sys/devices/system/cpu/cpu[0-7]/online					       u:object_r:vendor_sysfs_corecontrol:s0
-
 # Fastcharge
 /sys/kernel/fast_charge/force_fast_charge                  		       u:object_r:vendor_sysfs_fastcharge:s0
 /sys/kernel/fastchgtoggle/mode	         		      		       u:object_r:vendor_sysfs_fastcharge:s0
