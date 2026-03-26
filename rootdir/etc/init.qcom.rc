@@ -329,10 +329,6 @@ on post-fs-data
     chmod 0660 /sys/kernel/fast_charge/force_fast_charge
     chown system system /sys/class/qcom-battery/input_suspend
     chmod 0660 /sys/class/qcom-battery/input_suspend
-    
-    # Allow system to modify swappiness
-    chown system system /proc/sys/vm/swappiness
-    chmod 0660 /proc/sys/vm/swappiness
 
     # Allow Core Control
     chown system system /sys/devices/system/cpu/cpu0/online

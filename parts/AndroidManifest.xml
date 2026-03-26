@@ -82,11 +82,6 @@
         </service>
 
         <activity
-            android:name=".zram.ZramActivity"
-            android:label="@string/zram_size_title"
-            android:exported="false" />
-
-        <activity
             android:name=".fastcharge.FastChargeActivity"
             android:label="@string/fastcharge_title"
             android:exported="false" />
@@ -112,7 +107,7 @@
     	    android:exported="false" />
 
         <activity
-            android:name=".speaker.ClearSpeakerActivity" 
+            android:name=".speaker.ClearSpeakerActivity"
             android:label="@string/clear_speaker_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -213,7 +208,7 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
-        </service> 
+        </service>
         <activity
             android:name=".dirac.DiracActivity"
             android:label="@string/dirac_title"
@@ -221,7 +216,7 @@
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-            <meta-data 
+            <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.sound" />
             <meta-data
