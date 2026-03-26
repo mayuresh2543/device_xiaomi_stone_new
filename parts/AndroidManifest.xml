@@ -87,11 +87,6 @@
             android:exported="false" />
 
         <activity
-            android:name=".corecontrol.CoreControlActivity"
-            android:label="@string/core_control_title"
-            android:exported="false" />
-
-        <activity
     	    android:name=".useless.UselessActivity"
     	    android:label="@string/useless_mode_title"
     	    android:exported="false" />
