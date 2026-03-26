@@ -15,12 +15,6 @@
         android:icon="@drawable/ic_fast_charge" />
 
     <Preference
-        android:key="zram"
-        android:title="@string/zram_size_title"
-        android:summary="@string/zram_summary"
-        android:icon="@drawable/ic_zram" />
-
-    <Preference
     	android:key="useless"
     	android:title="@string/useless_mode_title"
     	android:summary="@string/useless_mode_summary"
