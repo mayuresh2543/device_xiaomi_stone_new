@@ -662,3 +662,34 @@ on property:vendor.post_boot.parsed=1
     # Kill CPU input boost
     write /sys/devices/system/cpu/cpu_boost/input_boost_freq "0 0 0 0 0 0 0"
     write /sys/devices/system/cpu/cpu_boost/input_boost_ms 0
+
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    
+    write /dev/cpuctl/background/cpu.uclamp.max 50
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.uclamp.max 40
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+
+    write /proc/sys/kernel/sched_ravg_hist_size 5
+    write /proc/sys/kernel/sched_latency_ns 4000000
+    write /proc/sys/kernel/sched_min_granularity_ns 400000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 500000
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+
+    write /proc/sys/kernel/sched_upmigrate 75
+    write /proc/sys/kernel/sched_downmigrate 55
+    write /proc/sys/kernel/sched_window_stats_policy 3
+    write /proc/sys/kernel/sched_ravg_window_nr_ticks 3
+
+    write /sys/block/sda/queue/read_ahead_kb 512
+    write /sys/block/sdb/queue/read_ahead_kb 512
+    write /sys/block/dm-0/queue/read_ahead_kb 512
+    write /sys/block/dm-1/queue/read_ahead_kb 512
+    write /sys/block/dm-2/queue/read_ahead_kb 512
+    write /sys/block/sda/queue/iosched/low_latency 1
+    write /sys/block/sdb/queue/iosched/low_latency 1
+    write /sys/block/sda/queue/add_random 0
+    write /sys/block/sdb/queue/add_random 0
