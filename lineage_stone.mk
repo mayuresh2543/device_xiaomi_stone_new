@@ -11,6 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+TARGET_DISABLE_EPPE := true
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -20,6 +21,19 @@ TARGET_SCREEN_WIDTH := 1080
 
 TARGET_EXCLUDES_AUDIOFX := true
 
+<<<<<<< HEAD
+=======
+#Optional flags
+# Camera information
+AXION_CAMERA_REAR_INFO := 48,8,2
+AXION_CAMERA_FRONT_INFO := 13
+
+# Maintainer name
+AXION_MAINTAINER := NeoPrabhx
+
+include vendor/lineage-priv/keys/keys.mk
+
+>>>>>>> 148af50f8ec62a5186f665a58957b8f936e1b60f
 PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone
 PRODUCT_MANUFACTURER := Xiaomi

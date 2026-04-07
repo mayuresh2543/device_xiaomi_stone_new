@@ -56,6 +56,13 @@
       "ResetOnInit": true
     },
     {
+      "Name": "UclampFgWinMin",
+      "Path": "/dev/cpuctl/foreground_window/cpu.uclamp.min",
+      "Values": ["0", "30"],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "UclampTALatency",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.latency_sensitive",
       "Values": ["1", "0"],
@@ -242,6 +249,12 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFgMin",
+      "Duration": 0,
+      "Value": "30"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "UclampFgWinMin",
       "Duration": 0,
       "Value": "30"
     },

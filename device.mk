@@ -3,17 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# BCR
-$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
-
-# Datura
-PRODUCT_PACKAGES += Datura
-
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
 # Viper
-$(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
+TARGET_INCLUDE_VIPERFX := true
 
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
@@ -26,6 +20,43 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+
+# OPTIONAL FLAGS
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDES_LOS_PREBUILTS := true
+TARGET_SUPPORTED_REFRESH_RATES := 60,120
+
+
+# Charging
+BYPASS_CHARGE_SUPPORTED := false
+
+# CPU governor support
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+PERF_ANIM_OVERRIDE := true
+
+# GPU
+GPU_FREQS_PATH := /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
+GPU_MIN_FREQ_PATH := /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+
+# High Brightness Mode (HBM)
+HBM_SUPPORTED := true
+HBM_NODE := /sys/devices/platform/soc/5e00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
+
+# Flashlight strength
+TORCH_STR_SUPPORTED := false
+
+# doze
+TARGET_NEEDS_DOZE_FIX := false
+
+# handeled by lmkd
+TARGET_USES_USLMK := false
+
+#RAM
+TARGET_IS_LOW_RAM := false
+
+# debugging
+#PRODUCT_PRODUCT_PROPERTIES += persist.sys.ax_debug_enabled=1
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -284,6 +315,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayStone \
     TelephonyOverlayStone \
+    LauncherOverlayStone \
     FrameworkOverlayStone \
     NfcOverlayStone \
     SettingsOverlayStone \
@@ -362,7 +394,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti-system-ext.xml \
     $(LOCAL_PATH)/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml
-
+    
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
@@ -428,7 +460,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.default \
-    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+    $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/init.axion.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.axion.rc
 
 # Sensors
 PRODUCT_PACKAGES += \

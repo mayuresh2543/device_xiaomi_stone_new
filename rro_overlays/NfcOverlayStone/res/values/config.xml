@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+<<<<<<< HEAD
      SPDX-FileCopyrightText: The LineageOS Project
+=======
+     Copyright (C) 2024 The LineageOS Android
+>>>>>>> 148af50f8ec62a5186f665a58957b8f936e1b60f
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
