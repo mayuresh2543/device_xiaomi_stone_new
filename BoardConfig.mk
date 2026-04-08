@@ -68,8 +68,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/vintf/device_framework_matrix.xml \
-    $(DEVICE_PATH)/vintf/vendor_framework_compatibility_matrix.xml
+    $(DEVICE_PATH)/vintf/device_framework_matrix.xml
 
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml
