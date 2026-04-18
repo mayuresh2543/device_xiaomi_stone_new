@@ -51,7 +51,6 @@ ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 
 # Performance
-dalvik.vm.heapsize=36m
 dalvik.vm.dex2oat64.enabled=true
 dev.pm.dyn_samplingrate=1
 persist.timed.enable=true
