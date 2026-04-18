@@ -112,9 +112,7 @@ use.voice.path.for.pcm.voip=true
 persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
 
-# Display & WFD
-persist.debug.wfd.enable=1
-persist.sys.wfd.virtual=0
+# Display
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 debug.cpurend.vsync=false
