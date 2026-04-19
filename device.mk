@@ -3,33 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# BCR
-$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
-
-# Datura
-PRODUCT_PACKAGES += Datura
-
-# Dolby
-$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
-
-# Viper
-$(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
-
-# Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
-
-# AAPT
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -46,6 +21,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
+
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -85,6 +67,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/usb_audio_policy_configuration.xml \
 
+# BCR
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
@@ -114,6 +99,9 @@ PRODUCT_PACKAGES += \
     libutilscallstack.vendor
 
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
+
+# Datura
+PRODUCT_PACKAGES += Datura
 
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -149,12 +137,18 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
 
+# Dolby
+$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor
+
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -214,11 +208,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      IFAAService
 
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
-
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_stone)
 
@@ -230,6 +219,11 @@ PRODUCT_PACKAGES += \
     uinput-fpc.kl \
     uinput-goodix.idc \
     uinput-goodix.kl
+
+# IPACM
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
 
 # IR
 PRODUCT_PACKAGES += \
@@ -254,6 +248,11 @@ PRODUCT_PACKAGES += \
     video_system_specs_blair.json \
     video_system_specs_blair_lite.json
 
+# Mlipay
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.0.vendor
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor \
@@ -262,11 +261,6 @@ PRODUCT_PACKAGES += \
 # Neural networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
-
-# Mlipay
-PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.mlipay@1.1.vendor \
-    vendor.xiaomi.hardware.mtdservice@1.0.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -280,25 +274,22 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-# Overlay RRO
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayStone \
-    TelephonyOverlayStone \
+    FrameworkOverlayMoonstone \
     FrameworkOverlayStone \
+    FrameworkOverlaySunstone \
+    NcmTetheringOverlay \
     NfcOverlayStone \
     SettingsOverlayStone \
     SettingsProviderOverlayStone \
     SystemUIOverlayStone \
-    WifiOverlayStone \
-    FrameworkOverlayMoonstone \
-    FrameworkOverlaySunstone
+    TelephonyOverlayStone \
+    WifiOverlayStone
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rro_overlays/config-odm.xml:$(TARGET_COPY_OUT_ODM)/overlay/config/config.xml \
     $(LOCAL_PATH)/rro_overlays/config-vendor.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/config/config.xml
-
-PRODUCT_PACKAGES += \
-    NcmTetheringOverlay
 
 # Partitions
 PRODUCT_PACKAGES += \
@@ -372,8 +363,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
-    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json
+    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -411,8 +402,8 @@ PRODUCT_PACKAGES += \
     fstab.default
 
 PRODUCT_PACKAGES += \
-    init.kernel.post_boot.sh \
     init.class_main.sh \
+    init.kernel.post_boot.sh \
     init.qcom.early_boot.sh \
     init.qcom.sh \
     init.qti.display_boot.sh \
@@ -433,10 +424,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.xiaomi-multihal
-
-PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.sensors-service.xiaomi-multihal \
     libsensorndkbridge
 
 # Shipping API level
@@ -445,11 +434,11 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
+    hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
@@ -462,10 +451,10 @@ PRODUCT_PACKAGES += \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
     qti-telephony-hidl-wrapper-prd \
-    qti_telephony_hidl_wrapper.xml \
-    qti_telephony_hidl_wrapper_prd.xml \
     qti-telephony-utils \
     qti-telephony-utils-prd \
+    qti_telephony_hidl_wrapper.xml \
+    qti_telephony_hidl_wrapper_prd.xml \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
     telephony-ext \
@@ -500,6 +489,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
+# Viper
+$(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
@@ -515,8 +507,8 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/wifi,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 PRODUCT_PACKAGES += \
-    firmware_wlan_mac.bin_symlink \
-    firmware_WCNSS_qcom_cfg.ini_symlink
+    firmware_WCNSS_qcom_cfg.ini_symlink \
+    firmware_wlan_mac.bin_symlink
 
 # Inherit from proprietary targets
 $(call inherit-product, vendor/xiaomi/stone/stone-vendor.mk)
