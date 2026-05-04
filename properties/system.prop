@@ -75,6 +75,7 @@ debug.hwui.skia_atrace_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
+ro.opengles.version=196610
 
 # Media (MM) Modules
 media.aac_51_output_enabled=true
@@ -98,9 +99,6 @@ qemu.hw.mainkeys=0
 ro.kernel.qemu.gles=0
 sys.qca1530=detect
 
-# NFC
-ro.nfc.port=I2C
-
 # Performance
 arm64.memtag.process.system_server=off
 dalvik.vm.dex2oat64.enabled=true
@@ -112,6 +110,7 @@ ro.charger.enable_suspend=1
 # Storage
 persist.fuse_sdcard=true
 persist.sys.fuse.passthrough.enable=true
+ro.incremental.enable=true
 
 # Telephony & RIL
 DEVICE_PROVISIONED=1
@@ -128,3 +127,4 @@ ril.subscription.types=NV,RUIM
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
+persist.vendor.radio.atfwd.start=true
