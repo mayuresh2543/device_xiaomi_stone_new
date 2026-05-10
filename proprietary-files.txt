@@ -526,49 +526,47 @@ vendor/lib/libdiag.so
 vendor/lib64/libdiag.so
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
-# Display
-vendor/etc/display/DPU660.xml
-vendor/etc/display/DPU670.xml
-vendor/etc/display/DPU720.xml
-vendor/etc/display/DPU7__.xml
-vendor/etc/display/advanced_sf_offsets.xml
-vendor/lib64/libdisplayqos.so
-vendor/lib64/libdisplayskuutils.so
-vendor/lib64/libdpps.so
-vendor/lib64/libhdr_tm.so
-vendor/lib64/libqrtrclient.so
-vendor/lib64/libqseed3.so
-vendor/lib64/librcmask.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-colormgr-algo.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml2_1.so
+# Display - from fogos_g V1UGS35H.75-14-3-7
+vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
+vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
+vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
+vendor/etc/display/DPU7__.xml|c056f3cb9fa123ca3de5b2a9775c184dddf25b9d
+vendor/lib64/libdisplayqos.so|aa222f4c1a2d2fb60944c44f8a82621d6bc75184
+vendor/lib64/libdisplayskuutils.so|77a89896ee24fcf26ac2fadbf901d45c668e704e
+vendor/lib64/libdpps.so|70b92adc17927421184180eb1240c74dda7142cd
+vendor/lib64/libhdr_tm.so|7954c5cd5c0b23fe8d0609361c22d24c59f1448b
+vendor/lib64/libqrtrclient.so|2474a708487c269c04afffbf755fff1686c6011c
+vendor/lib64/libqseed3.so|d62c37baf259250cadfcff8734e82054ed87bb96
+vendor/lib64/librcmask.so|8feb479fe590b6aec282ce3342574d9113f80516
+vendor/lib64/libsdm-color.so|1c416b205c996575d26a41c5d7a9d07728f9134a
+vendor/lib64/libsdm-colormgr-algo.so|5416a3b9b0735099c9b86f451f41386711787ea4
+vendor/lib64/libsdm-diag.so|218bae2b1300bd562f813a849244e843c05a891e
+vendor/lib64/libsdm-disp-vndapis.so|dc3ff8c971bbcb0d1b9e5079324d1d1d05a1fd39
+vendor/lib64/libsdmextension.so|edd50cd81449fdb39e11238023e518889d798b9d
+vendor/lib64/libtinyxml2_1.so|11ceb3f1e7650c41621d47e5ec5567c8f466086e
 
 # Display calibration
 vendor/etc/qcom,mdss_dsi_m17_38_0c_0a_fhdp_dsc_vid_mi.xml:vendor/etc/mdss_dsi_panel_m17_38_0c_0a_fhdp_dsc_vid_mi.xml
 vendor/etc/qdcm_calib_data_xiaomi_m17_38_0c_0a_fhd_dsc_video_dsi_panel.xml
 
-# Display postprocessing
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/ppd
-vendor/bin/qdcmss
-vendor/etc/init/qdcmss.rc
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/etc/SVIConfig.xml
-vendor/etc/snapdragon_color_libs_config.xml
-vendor/lib64/libdisp-aba.so
-vendor/lib64/libqdcm-mode-parser.so
-vendor/lib64/libsnapdragoncolor-manager.so
-vendor/lib64/libsnapdragoncolor-qdcm.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.color@1.3.so
-vendor/lib64/vendor.display.color@1.4.so
-vendor/lib64/vendor.display.color@1.5.so
-vendor/lib64/vendor.display.postproc@1.0.so
+# Display postprocessing - from fogos_g V1UGS35H.75-14-3-7
+vendor/bin/hw/vendor.display.color@1.0-service|cd08e02010826714d52e44d655a33faf537e076d
+vendor/bin/ppd|c3e304b42c108db935e8ed4a12dd393854417bfc
+vendor/bin/qdcmss|2dd2d71247c85a1bb6b3168d53cd844cb387f75c
+vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
+vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
+vendor/etc/snapdragon_color_libs_config.xml|20be96679760b14cd63577a17f4a040e543254dd
+vendor/lib64/libdisp-aba.so|3ff1c1d30d96c3ce3608378b2afcc75b892845cb
+vendor/lib64/libqdcm-mode-parser.so|207143ab4dda0886bde2a0333d7a1bcd7af6f8e1
+vendor/lib64/libsnapdragoncolor-manager.so|75e45e5e855172836130a0d65c4ff321388f558a
+vendor/lib64/libsnapdragoncolor-qdcm.so|673c41753603bacb197674df567723dfd928384e
+vendor/lib64/vendor.display.color@1.0.so|f30e085454a299003ed2a9a49076577a3a3da2fc
+vendor/lib64/vendor.display.color@1.1.so|2ee4e02b8d3defaa200b4e47ea69d7345f7e07f6
+vendor/lib64/vendor.display.color@1.2.so|a3c1587829a8fb66e3217223dc881c7e823e709c
+vendor/lib64/vendor.display.color@1.3.so|e54ae74a5e996e52b9b86cd52b2230b93d9ee7ef
+vendor/lib64/vendor.display.color@1.4.so|b1be60825152072e122daaa91e8a6a51dd607381
+vendor/lib64/vendor.display.color@1.5.so|e2d081eb57eef87525acf784cbeadead1efc355d
+vendor/lib64/vendor.display.postproc@1.0.so|f5fb7e819001e8157cd0dc25bbbc6a0dca5d9d31
 
 # DPM
 system/framework/tcmclient.jar
