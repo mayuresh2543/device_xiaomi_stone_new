@@ -72,13 +72,19 @@ function configure_zram_parameters() {
 }
 
 function configure_memory_parameters() {
-    # Disable wsf for all targets because we are using efk.
-    # wsf Range : 1..1000 So set to bare minimum value 1.
-    echo 1 > /proc/sys/vm/watermark_scale_factor
-    configure_zram_parameters
+	# Set swappiness to 100 for all targets
+	echo 100 > /proc/sys/vm/swappiness
 
-    # Spawn 1 kswapd threads which can help in fast reclaiming of pages
-    echo 1 > /proc/sys/vm/kswapd_threads
+	# Set lz4 algorithm for zRAM compression
+	echo lz4 > /sys/block/zram0/comp_algorithm
+
+	# Disable ZRAM read-ahead to save CPU
+	echo 0 > /proc/sys/vm/page-cluster
+
+	configure_zram_parameters
+
+	#Spawn 1 kswapd threads which can help in fast reclaiming of pages
+	echo 1 > /proc/sys/vm/kswapd_threads
 
     echo 10 > /proc/sys/vm/dirty_ratio
     echo 5  > /proc/sys/vm/dirty_background_ratio
