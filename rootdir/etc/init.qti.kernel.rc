@@ -84,29 +84,9 @@ on boot
     chown root system /sys/kernel/dload/dload_mode
     chmod 0660 /sys/kernel/dload/dload_mode
 
-    # set the io-scheduler to mq-deadline on all mq support devices
-    write /sys/block/sda/queue/scheduler mq-deadline
-    write /sys/block/sdb/queue/scheduler mq-deadline
-    write /sys/block/sdc/queue/scheduler mq-deadline
-    write /sys/block/sdd/queue/scheduler mq-deadline
-    write /sys/block/sde/queue/scheduler mq-deadline
-    write /sys/block/sdf/queue/scheduler mq-deadline
-    write /sys/block/sdg/queue/scheduler mq-deadline
-    write /sys/block/sdh/queue/scheduler mq-deadline
-    write /sys/class/block/mmcblk0/queue/scheduler mq-deadline
-    write /sys/class/block/mmcblk1/queue/scheduler mq-deadline
-
-    # update io-scheduler tunables
-    write /sys/block/sda/queue/iosched/slice_idle 0
-    write /sys/block/sdb/queue/iosched/slice_idle 0
-    write /sys/block/sdc/queue/iosched/slice_idle 0
-    write /sys/block/sdd/queue/iosched/slice_idle 0
-    write /sys/block/sde/queue/iosched/slice_idle 0
-    write /sys/block/sdf/queue/iosched/slice_idle 0
-    write /sys/block/sdg/queue/iosched/slice_idle 0
-    write /sys/block/sdh/queue/iosched/slice_idle 0
-    write /sys/class/block/mmcblk0/queue/iosched/slice_idle 0
-    write /sys/class/block/mmcblk1/queue/iosched/slice_idle 0
+    # set the io-scheduler to kyber on all mq support devices
+    write /sys/block/sda/queue/scheduler kyber
+    write /sys/block/sdb/queue/scheduler kyber
 
 on post-fs-data
     # Create directory used for dump collection
