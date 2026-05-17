@@ -20,13 +20,13 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.TwoStatePreference;
 
 import org.lineageos.settings.R;
 
-public class FastChargeSettingsFragment extends PreferenceFragment
+public class FastChargeSettingsFragment extends SettingsBasePreferenceFragment
     implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_NORMAL_CHARGER = "fastcharge_normal";
@@ -43,9 +43,9 @@ public class FastChargeSettingsFragment extends PreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.fastcharge_settings, rootKey);
-        
+
         mFastChargeUtils = new FastChargeUtils(getActivity());
-        
+
         mNormalChargerPreference = (ListPreference) findPreference(KEY_NORMAL_CHARGER);
         mUsbChargerPreference = (TwoStatePreference) findPreference(KEY_USB_CHARGER);
         mThermalBoostPreference = (TwoStatePreference) findPreference(KEY_THERMAL_BOOST);
@@ -111,19 +111,19 @@ public class FastChargeSettingsFragment extends PreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final String key = preference.getKey();
-        
+
         switch (key) {
             case KEY_NORMAL_CHARGER:
                 String mode = (String) newValue;
                 mFastChargeUtils.setNormalFastChargeMode(mode);
                 updateNormalChargeSummary(Integer.parseInt(mode));
                 return true;
-                
+
             case KEY_USB_CHARGER:
                 boolean value = (Boolean) newValue;
                 mFastChargeUtils.enableUsbFastCharge(value);
                 return true;
-                
+
             case KEY_THERMAL_BOOST:
                 boolean thermalValue = (Boolean) newValue;
                 if (thermalValue) {
@@ -143,7 +143,7 @@ public class FastChargeSettingsFragment extends PreferenceFragment
                     mFastChargeUtils.enableThermalBoost(false);
                     return true;
                 }
-                
+
             case KEY_BYPASS_CHARGE:
                 boolean bypassValue = (Boolean) newValue;
                 if (bypassValue) {
