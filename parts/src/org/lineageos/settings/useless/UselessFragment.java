@@ -12,12 +12,12 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import androidx.preference.TwoStatePreference;
 import org.lineageos.settings.R;
 import java.util.Random;
 
-public class UselessFragment extends PreferenceFragment
+public class UselessFragment extends SettingsBasePreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_USELESS_MODE = "useless_mode";

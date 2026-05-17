@@ -19,13 +19,13 @@ package org.lineageos.settings.kamisstuff;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import org.lineageos.settings.R;
 import org.lineageos.settings.fastcharge.FastChargeActivity;
 import org.lineageos.settings.useless.UselessActivity;
 import org.lineageos.settings.kernelmanager.KernelManagerActivity;
 
-public class KamisStuffFragment extends PreferenceFragment {
+public class KamisStuffFragment extends SettingsBasePreferenceFragment {
 
     private static final String KEY_FAST_CHARGE = "fast_charge";
     private static final String KEY_USELESS = "useless";

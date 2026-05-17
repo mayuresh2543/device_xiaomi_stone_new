@@ -14,10 +14,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 import org.lineageos.settings.R;
 
-public class KernelManagerFragment extends PreferenceFragment
+public class KernelManagerFragment extends SettingsBasePreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CPU_GOVERNOR = "cpu_governor";
@@ -27,7 +27,7 @@ public class KernelManagerFragment extends PreferenceFragment
     private static final String KEY_PERFORMANCE_MAX_FREQ = "performance_max_freq";
     private static final String KEY_APPLY_SETTINGS = "apply_settings";
     private static final String KEY_RESET_SETTINGS = "reset_settings";
-    
+
     private KernelManagerUtils mKernelUtils;
     private ListPreference mGovernorPreference;
     private ListPreference mEfficiencyMinFreq, mEfficiencyMaxFreq;
@@ -37,7 +37,7 @@ public class KernelManagerFragment extends PreferenceFragment
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.kernel_manager_settings, rootKey);
         mKernelUtils = new KernelManagerUtils();
-        
+
         initializePreferences();
         loadCurrentSettings();
     }
@@ -48,14 +48,14 @@ public class KernelManagerFragment extends PreferenceFragment
         mEfficiencyMaxFreq = (ListPreference) findPreference(KEY_EFFICIENCY_MAX_FREQ);
         mPerformanceMinFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MIN_FREQ);
         mPerformanceMaxFreq = (ListPreference) findPreference(KEY_PERFORMANCE_MAX_FREQ);
-        
+
         // Set listeners
         if (mGovernorPreference != null) {
             mGovernorPreference.setOnPreferenceChangeListener(this);
         }
-        
+
         setFrequencyPreferenceListeners();
-        
+
         // Apply and Reset buttons
         Preference applyPref = findPreference(KEY_APPLY_SETTINGS);
         if (applyPref != null) {
@@ -64,7 +64,7 @@ public class KernelManagerFragment extends PreferenceFragment
                 return true;
             });
         }
-        
+
         Preference resetPref = findPreference(KEY_RESET_SETTINGS);
         if (resetPref != null) {
             resetPref.setOnPreferenceClickListener(preference -> {
@@ -91,7 +91,7 @@ public class KernelManagerFragment extends PreferenceFragment
             mGovernorPreference.setValue(currentGovernor);
             mGovernorPreference.setSummary(getString(R.string.cpu_governor_summary, currentGovernor));
         }
-        
+
         // Load available frequencies for each cluster
         loadFrequenciesForCluster(KernelManagerUtils.EFFICIENCY_CLUSTER, mEfficiencyMinFreq, mEfficiencyMaxFreq);
         loadFrequenciesForCluster(KernelManagerUtils.PERFORMANCE_CLUSTER, mPerformanceMinFreq, mPerformanceMaxFreq);
@@ -105,7 +105,7 @@ public class KernelManagerFragment extends PreferenceFragment
                 int freqMhz = Integer.parseInt(frequencies[i]) / 1000;
                 frequencyLabels[i] = freqMhz + " MHz";
             }
-            
+
             if (minPref != null) {
                 minPref.setEntries(frequencyLabels);
                 minPref.setEntryValues(frequencies);
@@ -114,7 +114,7 @@ public class KernelManagerFragment extends PreferenceFragment
                 int minFreqMhz = Integer.parseInt(currentMinFreq) / 1000;
                 minPref.setSummary(minFreqMhz + " MHz");
             }
-            
+
             if (maxPref != null) {
                 maxPref.setEntries(frequencyLabels);
                 maxPref.setEntryValues(frequencies);
@@ -130,7 +130,7 @@ public class KernelManagerFragment extends PreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         String key = preference.getKey();
         String value = (String) newValue;
-        
+
         if (KEY_CPU_GOVERNOR.equals(key)) {
             mGovernorPreference.setSummary(getString(R.string.cpu_governor_summary, value));
             return true;
@@ -139,7 +139,7 @@ public class KernelManagerFragment extends PreferenceFragment
             preference.setSummary(freqMhz + " MHz");
             return true;
         }
-        
+
         return false;
     }
 
@@ -149,10 +149,10 @@ public class KernelManagerFragment extends PreferenceFragment
             String governor = mGovernorPreference.getValue();
             mKernelUtils.setGovernor(governor);
         }
-        
+
         // Apply frequencies
         applyFrequencySettings();
-        
+
         Toast.makeText(getContext(), R.string.settings_applied, Toast.LENGTH_SHORT).show();
     }
 
