@@ -38,7 +38,7 @@ public class DiracUtils {
 
     public DiracUtils(Context context) {
         mContext = context;
-        mMediaSessionManager = (MediaSessionManager) context.getSystemService(Context.MEDIA_SESSION_SERVICE);
+        mMediaSessionManager = (MediaSessionManager) mContext.getSystemService(Context.MEDIA_SESSION_SERVICE);
         mDiracSound = new DiracSound(0, 0);
     }
 
@@ -48,6 +48,14 @@ public class DiracUtils {
         }
 
         return mInstance;
+    }
+
+    public void release() {
+        if (mDiracSound != null) {
+            mDiracSound.release();
+            mDiracSound = null;
+        }
+        mInstance = null;
     }
 
     private void triggerPlayPause(MediaController controller) {

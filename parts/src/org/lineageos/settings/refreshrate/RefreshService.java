@@ -73,10 +73,27 @@ public class RefreshService extends Service {
         return null;
     }
 
+    @Override
+    public void onDestroy() {
+        if (DEBUG) Log.d(TAG, "Destroying service");
+        try {
+            if (mActivityTaskManager != null) {
+                mActivityTaskManager.unregisterTaskStackListener(mTaskListener);
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
+        unregisterReceiver(mIntentReceiver);
+        if (mRefreshUtils != null) {
+            mRefreshUtils.cleanup();
+        }
+        super.onDestroy();
+    }
+
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        filter.addAction(Intent.ACTION_SCREEN_ON);        
+        filter.addAction(Intent.ACTION_SCREEN_ON);
         this.registerReceiver(mIntentReceiver, filter);
     }
 
@@ -90,7 +107,7 @@ public class RefreshService extends Service {
                 }
                 String foregroundApp = info.topActivity.getPackageName();
                 int state = mRefreshUtils.getStateForPackage(foregroundApp);
-                
+
                 if (!mRefreshUtils.isAppInList) {
                     mRefreshUtils.getOldRate();
                 }
