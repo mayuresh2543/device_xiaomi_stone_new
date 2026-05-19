@@ -84,6 +84,20 @@ public class ThermalService extends Service {
         return null;
     }
 
+    @Override
+    public void onDestroy() {
+        if (DEBUG) Log.d(TAG, "Destroying service");
+        try {
+            if (mActivityTaskManager != null) {
+                mActivityTaskManager.unregisterTaskStackListener(mTaskListener);
+            }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
+        unregisterReceiver(mIntentReceiver);
+        super.onDestroy();
+    }
+
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);

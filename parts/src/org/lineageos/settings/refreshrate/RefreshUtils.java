@@ -68,6 +68,13 @@ public final class RefreshUtils {
                 UserHandle.CURRENT);
     }
 
+    protected void cleanup() {
+        if (orientationListener != null) {
+            orientationListener.disable();
+            orientationListener = null;
+        }
+    }
+
     private void writeValue(String profiles) {
         mSharedPrefs.edit().putString(REFRESH_CONTROL, profiles).apply();
     }
@@ -84,7 +91,7 @@ public final class RefreshUtils {
     private float getUserMinRefreshRate() {
         return Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
     }
-    
+
     private void initializeOrientationListener(String packageName) {
         if (orientationListener != null) {
             orientationListener.disable();

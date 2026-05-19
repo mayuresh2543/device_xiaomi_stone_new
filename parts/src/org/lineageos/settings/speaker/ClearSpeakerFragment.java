@@ -78,6 +78,9 @@ public class ClearSpeakerFragment extends SettingsBasePreferenceFragment impleme
     @Override
     public void onStop() {
         super.onStop();
+        if (mHandler != null) {
+            mHandler.removeCallbacksAndMessages(null);
+        }
         stopPlaying();
     }
 
