@@ -53,6 +53,7 @@
       "Name": "UclampTALatency",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.latency_sensitive",
       "Values": ["1", "0"],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -73,42 +74,49 @@
       "Name": "CPUBWMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/min_freq",
       "Values": ["7980", "5161", "3879", "2929", "762"],
+      "DefaultIndex": 4,
       "ResetOnInit": true
     },
     {
       "Name": "L3LittleClusterMinFreq",
       "Path": "/sys/class/devfreq/fd90100.qcom,cpu0-cpu-l3-lat/min_freq",
       "Values": ["1497600000", "1171200000", "300000000"],
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
       "Name": "L3BigClusterMinFreq",
       "Path": "/sys/class/devfreq/fd90100.qcom,cpu6-cpu-l3-lat/min_freq",
       "Values": ["1497600000", "1171200000", "300000000"],
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
       "Name": "CPUDDRLatLittleMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-lat/min_freq",
       "Values": ["7980", "5161", "3879", "762"],
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
       "Name": "CPUDDRLatBigMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-lat/min_freq",
       "Values": ["7980", "5161", "3879", "762"],
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
       "Name": "CPUDDRLatfloorLittleMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-latfloor/min_freq",
       "Values": ["7980", "5161", "3879", "762"],
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
       "Name": "CPUDDRLatfloorBigMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq",
       "Values": ["7980", "5161", "3879", "762"],
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
@@ -575,7 +583,7 @@
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 100,
-      "Value": "1401600"
+      "Value": "1228800"
     },
     {
       "PowerHint": "DOUBLE_TAP_TO_WAKE",
