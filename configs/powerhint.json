@@ -178,91 +178,91 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "PMQoSCpuDmaLatency",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "44"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "1228800"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "1113600"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "35"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFgMin",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "15"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFgWinMin",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "30"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampTALatency",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "1"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBWMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "5161"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUDDRLatLittleMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "5161"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUDDRLatBigMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "5161"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUDDRLatfloorLittleMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "5161"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUDDRLatfloorBigMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "5161"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "L3LittleClusterMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "1171200000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "L3BigClusterMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "1171200000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "GPUMinFreq",
-      "Duration": 400,
+      "Duration": 250,
       "Value": "443000000"
     },
     {
