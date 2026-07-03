@@ -72,8 +72,8 @@ function configure_zram_parameters() {
 }
 
 function configure_memory_parameters() {
-	# Set swappiness to 100 for all targets
-	echo 100 > /proc/sys/vm/swappiness
+	# Set swappiness to 120 for all targets
+	echo 120 > /proc/sys/vm/swappiness
 
 	# Set zstd algorithm for zRAM compression
 	echo zstd > /sys/block/zram0/comp_algorithm
@@ -99,7 +99,7 @@ echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
 
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
 
-echo 25 > /proc/sys/kernel/sched_min_task_util_for_boost
+echo 35 > /proc/sys/kernel/sched_min_task_util_for_boost
 echo 35 > /proc/sys/kernel/sched_min_task_util_for_colocation
 echo 1000000 > /proc/sys/kernel/sched_migration_cost_ns
 

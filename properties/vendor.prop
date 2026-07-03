@@ -230,13 +230,13 @@ debug.hwui.use_hint_manager=true
 # LMKD
 ro.lmk.use_psi=true
 ro.lmk.psi_partial_stall_ms=65
-ro.lmk.psi_complete_stall_ms=700
-ro.lmk.kill_heaviest_task=false
+ro.lmk.psi_complete_stall_ms=250
+ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=100
 ro.lmk.thrashing_limit=100
 ro.lmk.thrashing_limit_decay=10
 ro.lmk.swap_free_low_percentage=15
-ro.lmk.swap_util_max=85
+ro.lmk.swap_util_max=90
 ro.lmk.filecache_min_kb=350000
 
 # Media
