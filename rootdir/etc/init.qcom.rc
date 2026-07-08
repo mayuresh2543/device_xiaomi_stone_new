@@ -695,7 +695,3 @@ on property:vendor.post_boot.parsed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/sda/queue/add_random 0
     write /sys/block/sdb/queue/add_random 0
-
-# Networking
-    write /proc/sys/net/core/default_qdisc fq
-    write /proc/sys/net/ipv4/tcp_congestion_control bbr
