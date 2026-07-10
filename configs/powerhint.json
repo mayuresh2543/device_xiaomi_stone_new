@@ -31,7 +31,7 @@
     {
       "Name": "UclampTAMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
-      "Values": ["0", "25", "35", "50"],
+      "Values": ["0", "25", "30", "35", "50"],
       "DefaultIndex": 0,
       "ResetOnInit": true
     },
@@ -39,13 +39,6 @@
       "Name": "UclampFgMin",
       "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": ["0", "15", "30"],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "UclampFgWinMin",
-      "Path": "/dev/cpuctl/foreground_window/cpu.uclamp.min",
-      "Values": ["0", "30"],
       "DefaultIndex": 0,
       "ResetOnInit": true
     },
@@ -197,19 +190,13 @@
       "PowerHint": "INTERACTION",
       "Node": "UclampTAMin",
       "Duration": 250,
-      "Value": "35"
+      "Value": "25"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFgMin",
       "Duration": 250,
       "Value": "15"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "UclampFgWinMin",
-      "Duration": 250,
-      "Value": "30"
     },
     {
       "PowerHint": "INTERACTION",
@@ -299,12 +286,6 @@
       "Node": "UclampFgMin",
       "Duration": 1000,
       "Value": "15"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "UclampFgWinMin",
-      "Duration": 1000,
-      "Value": "30"
     },
     {
       "PowerHint": "LAUNCH",
@@ -427,12 +408,6 @@
       "Value": "0"
     },
     {
-      "PowerHint": "DISABLE_TA_BOOST",
-      "Node": "UclampFgWinMin",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "DISPLAY_IDLE",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
@@ -487,19 +462,13 @@
       "PowerHint": "GAME",
       "Node": "UclampTAMin",
       "Duration": 0,
-      "Value": "50"
+      "Value": "30"
     },
     {
       "PowerHint": "GAME",
       "Node": "UclampFgMin",
       "Duration": 0,
       "Value": "15"
-    },
-    {
-      "PowerHint": "GAME",
-      "Node": "UclampFgWinMin",
-      "Duration": 0,
-      "Value": "30"
     },
     {
       "PowerHint": "GAME",
