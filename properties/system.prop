@@ -98,7 +98,6 @@ sys.qca1530=detect
 arm64.memtag.process.system_server=off
 dalvik.vm.dex2oat64.enabled=true
 dev.pm.dyn_samplingrate=1
-persist.device_config.mglru_native.lru_gen_config=core_and_mm_walk
 persist.timed.enable=true
 ro.charger.enable_suspend=1
 
