@@ -9,12 +9,6 @@
         android:icon="@drawable/ic_fast_charge" />
 
     <Preference
-    	android:key="useless"
-    	android:title="@string/useless_mode_title"
-    	android:summary="@string/useless_mode_summary"
-    	android:icon="@drawable/ic_useless" />
-
-    <Preference
         android:key="kernel_manager"
         android:title="@string/kernel_manager_title"
         android:summary="@string/kernel_manager_summary"
