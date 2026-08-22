@@ -130,12 +130,6 @@
       "Values": ["0", "1"],
       "DefaultIndex": 0,
       "ResetOnInit": true
-    },
-    {
-      "Name": "PMQoSCpuDmaLatency",
-      "Path": "/dev/cpu_dma_latency",
-      "Values": ["44", "1000"],
-      "HoldFd": true
     }
   ],
   "Actions": [
@@ -167,12 +161,6 @@
       "PowerHint": "INTERACTION",
       "Type": "EndHint",
       "Value": "DISABLE_TA_BOOST"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 250,
-      "Value": "44"
     },
     {
       "PowerHint": "INTERACTION",
@@ -256,12 +244,6 @@
       "PowerHint": "LAUNCH",
       "Type": "EndHint",
       "Value": "DISABLE_TA_BOOST"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 1000,
-      "Value": "44"
     },
     {
       "PowerHint": "LAUNCH",
