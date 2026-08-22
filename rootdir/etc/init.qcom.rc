@@ -679,15 +679,15 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_wakeup_granularity_ns 500000
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
 
-    write /proc/sys/kernel/sched_upmigrate 75
-    write /proc/sys/kernel/sched_downmigrate 55
+    write /proc/sys/kernel/sched_upmigrate 85
+    write /proc/sys/kernel/sched_downmigrate 65
     write /proc/sys/kernel/sched_window_stats_policy 3
     write /proc/sys/kernel/sched_ravg_window_nr_ticks 3
 
-    write /sys/block/sda/queue/read_ahead_kb 512
-    write /sys/block/sdb/queue/read_ahead_kb 512
-    write /sys/block/dm-0/queue/read_ahead_kb 512
-    write /sys/block/dm-1/queue/read_ahead_kb 512
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sdb/queue/read_ahead_kb 128
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
     write /sys/block/dm-2/queue/read_ahead_kb 128
     write /sys/block/dm-3/queue/read_ahead_kb 128
     write /sys/block/dm-4/queue/read_ahead_kb 128
