@@ -102,7 +102,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/stone
 TARGET_KERNEL_VERSION := 5.4
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := moonstone,sunstone,stone
+TARGET_OTA_ASSERT_DEVICE := moonstone|sunstone|stone
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
