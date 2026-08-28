@@ -136,9 +136,6 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
 
-# Dolby
-$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
