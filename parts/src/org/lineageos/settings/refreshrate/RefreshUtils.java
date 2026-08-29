@@ -81,7 +81,7 @@ public final class RefreshUtils {
 
     protected void getOldRate(){
         defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
-        defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+        defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_STANDARD);
     }
 
     private float getUserMaxRefreshRate() {
@@ -89,7 +89,7 @@ public final class RefreshUtils {
     }
 
     private float getUserMinRefreshRate() {
-        return Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+        return Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_STANDARD);
     }
 
     private void initializeOrientationListener(String packageName) {
