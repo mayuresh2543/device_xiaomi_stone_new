@@ -96,7 +96,7 @@ BOARD_KERNEL_CMDLINE := \
     ip6table_raw.raw_before_defrag=1 \
     firmware_class.path=/vendor/firmware
 
-TARGET_KERNEL_CLANG_VERSION := r596125
+TARGET_KERNEL_CLANG_VERSION := r614150
 TARGET_KERNEL_CONFIG := stone_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/stone
 TARGET_KERNEL_NO_GCC := true
