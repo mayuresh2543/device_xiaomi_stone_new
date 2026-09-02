@@ -75,8 +75,8 @@ function configure_memory_parameters() {
 	# Set swappiness to 100 for all targets
 	echo 100 > /proc/sys/vm/swappiness
 
-	# Set zstd algorithm for zRAM compression
-	echo zstd > /sys/block/zram0/comp_algorithm
+	# Set lz4 algorithm for zRAM compression
+	echo lz4 > /sys/block/zram0/comp_algorithm
 
 	# Disable ZRAM read-ahead to save CPU
 	echo 0 > /proc/sys/vm/page-cluster
