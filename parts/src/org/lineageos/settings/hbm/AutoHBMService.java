@@ -146,6 +146,9 @@ public class AutoHBMService extends Service {
         if (pm.isInteractive()) {
             deactivateLightSensorRead();
         }
+        if (mExecutorService != null) {
+            mExecutorService.shutdownNow();
+        }
     }
 
     @Override
