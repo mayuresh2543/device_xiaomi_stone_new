@@ -195,7 +195,7 @@ volume index from 0 to 100.
     </volume>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_SPEAKER"
                                                    ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
-    <volume tream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_A2DP"
+    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_A2DP"
                                                   ref="HEADSET_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                                    ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
