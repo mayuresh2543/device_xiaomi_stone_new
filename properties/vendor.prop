@@ -127,6 +127,7 @@ ro.bluetooth.powerstats.disable=true
 ro.vendor.bluetooth.wipower=false
 
 # Blurs
+debug.renderengine.blur_algorithm=kawase
 ro.surface_flinger.supports_background_blur=1
 
 # Display
