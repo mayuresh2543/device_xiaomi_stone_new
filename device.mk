@@ -147,6 +147,9 @@ PRODUCT_PACKAGES += \
 USE_DEX2OAT_DEBUG := false
 WITH_DEXPREOPT_DEBUG_INFO := false
 
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
