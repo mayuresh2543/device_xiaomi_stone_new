@@ -292,6 +292,7 @@ PRODUCT_PACKAGES += \
     SettingsProviderOverlayStone \
     SystemUIOverlayStone \
     TelephonyOverlayStone \
+    UpdaterOverlayStone \
     WifiOverlayStone
 
 PRODUCT_COPY_FILES += \
