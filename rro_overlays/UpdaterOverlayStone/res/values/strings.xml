@@ -4,9 +4,9 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-24.0/Builds/stone.json</string>
+    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-23.2/Builds/stone.json</string>
 
-    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-24.0/Changelogs/stone.txt</string>
+    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/Mayuresh2543/OTA/refs/heads/lineage-23.2/Changelogs/stone.txt</string>
 
     <string name="blocked_update_info_url" translatable="false">https://t.me/team_buildbotchat</string>
 </resources>
