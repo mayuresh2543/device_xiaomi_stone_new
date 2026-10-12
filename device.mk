@@ -101,9 +101,6 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
 
-# Datura
-PRODUCT_PACKAGES += Datura
-
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
