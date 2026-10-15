@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2025 KamiKaonashi
+ * Copyright (C) 2026 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +15,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.kamisstuff;
+package org.lineageos.settings.xiaomiparts;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
-public class KamisStuffActivity extends CollapsingToolbarBaseActivity {
-    private static final String TAG_KAMIS_STUFF = "kamis_stuff";
+public class XiaomiPartsActivity extends CollapsingToolbarBaseActivity {
+    private static final String TAG_XIAOMI_PARTS = "xiaomi_parts";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportFragmentManager().beginTransaction().replace(
                 com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new KamisStuffFragment(), TAG_KAMIS_STUFF).commit();
+                new XiaomiPartsFragment(), TAG_XIAOMI_PARTS).commit();
     }
 
     @Override
