@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/xiaomi_parts_title">
+
+    <!-- Display -->
+    <PreferenceCategory
+        android:key="category_display"
+        android:title="@string/category_display">
+
+        <Preference
+            android:key="dc_dimming"
+            android:title="@string/dc_dimming_enable_title"
+            android:summary="@string/dc_dimming_enable_summary"
+            android:icon="@drawable/ic_dcdimming" />
+
+        <Preference
+            android:key="hbm"
+            android:title="@string/hbm_fragment_title"
+            android:summary="@string/hbm_fragment_summary"
+            android:icon="@drawable/ic_hbm_tile" />
+
+        <Preference
+            android:key="refresh_rate"
+            android:title="@string/refresh_title"
+            android:summary="@string/refresh_summary"
+            android:icon="@drawable/ic_refresh_120" />
+
+        <Preference
+            android:key="upscale"
+            android:title="@string/upscale_title"
+            android:summary="@string/upscale_summary"
+            android:icon="@drawable/ic_upscale" />
+
+        <Preference
+            android:key="system_resolution"
+            android:title="@string/system_resolution_title"
+            android:summary="@string/system_resolution_summary_setting"
+            android:icon="@drawable/ic_system_resolution" />
+
+    </PreferenceCategory>
+
+    <!-- Sound -->
+    <PreferenceCategory
+        android:key="category_sound"
+        android:title="@string/category_sound">
+
+        <Preference
+            android:key="dirac"
+            android:title="@string/dirac_title"
+            android:summary="@string/dirac_summary"
+            android:icon="@drawable/ic_qs_dirac" />
+
+        <Preference
+            android:key="clear_speaker"
+            android:title="@string/clear_speaker_title"
+            android:summary="@string/clear_speaker_summary"
+            android:icon="@drawable/ic_clear_speaker" />
+
+    </PreferenceCategory>
+
+    <!-- Battery -->
+    <PreferenceCategory
+        android:key="category_battery"
+        android:title="@string/category_battery">
+
+        <Preference
+            android:key="fast_charge"
+            android:title="@string/fastcharge_title"
+            android:summary="@string/fastcharge_summary"
+            android:icon="@drawable/ic_fast_charge" />
+
+        <Preference
+            android:key="thermal"
+            android:title="@string/thermal_title"
+            android:summary="@string/thermal_summary"
+            android:icon="@drawable/ic_thermal" />
+
+    </PreferenceCategory>
+
+    <!-- Performance -->
+    <PreferenceCategory
+        android:key="category_performance"
+        android:title="@string/category_performance">
+
+        <Preference
+            android:key="kernel_manager"
+            android:title="@string/kernel_manager_title"
+            android:summary="@string/kernel_manager_summary"
+            android:icon="@drawable/ic_kernel_manager" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
