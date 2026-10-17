@@ -191,4 +191,7 @@
     <string name="resolution_540p">540p</string>
     <string name="resolution_720p">720p</string>
 
+    <!-- Xiaomi Parts Credits -->
+    <string name="parts_credits_footer">Special thanks to KamiKaonashi for developing these features.</string>
+
 </resources>
