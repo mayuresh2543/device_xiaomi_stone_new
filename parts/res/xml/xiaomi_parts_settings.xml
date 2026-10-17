@@ -90,4 +90,9 @@
 
     </PreferenceCategory>
 
+    <com.android.settingslib.widget.FooterPreference
+        android:key="parts_credits_footer"
+        android:title="@string/parts_credits_footer"
+        android:selectable="false" />
+
 </PreferenceScreen>
