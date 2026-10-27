@@ -148,7 +148,8 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
-TARGET_INCLUDES_OEM_App := true
+PRODUCT_PACKAGES += \
+    DolbyAtmos
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
