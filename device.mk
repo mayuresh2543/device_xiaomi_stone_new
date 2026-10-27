@@ -281,7 +281,6 @@ PRODUCT_PACKAGES += \
     FrameworkOverlayMoonstone \
     FrameworkOverlayStone \
     FrameworkOverlaySunstone \
-    LauncherOverlayStone \
     NcmTetheringOverlay \
     NfcOverlayStone \
     SettingsOverlayStone \
