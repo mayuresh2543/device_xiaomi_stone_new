@@ -36,7 +36,7 @@
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true"
-        android:theme="@style/Theme.SubSettingsBase.Expressive">
+        android:theme="@style/Theme.SubSettingsBase">
 
         <receiver android:name=".BootCompletedReceiver">
             <intent-filter android:priority="1000">
@@ -142,12 +142,12 @@
             android:name=".display.DcDimmingSettingsActivity"
             android:label="@string/dc_dimming_enable_title"
             android:exported="false"
-            android:theme="@style/Theme.SubSettingsBase.Expressive" />
+            android:theme="@style/Theme.SubSettingsBase" />
         <activity
             android:name=".hbm.HBMActivity"
             android:label="@string/hbm_fragment_title"
             android:exported="false"
-            android:theme="@style/Theme.SubSettingsBase.Expressive" />
+            android:theme="@style/Theme.SubSettingsBase" />
         <activity
             android:name=".hbm.HBMFragment" />
         <service
