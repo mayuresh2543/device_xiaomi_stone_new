@@ -3400,7 +3400,6 @@
     </path>
     <path name="audio-record-voip">
         <ctl name="MultiMedia10 Mixer TX_CDC_DMA_TX_3" value="1"/>
-        <ctl name="TX_DEC2 Volume" value="84"/>
     </path>
     <path name="spkr-rx-calib">
         <ctl name="RX_CDC_DMA_RX_1_DL_HL Switch" value="1"/>
